@@ -1,0 +1,126 @@
+{
+  "Navbar": {
+    "brand": "NexusApp",
+    "badge": "EARLY ACCESS · IN DEVELOPMENT",
+    "features": "Features",
+    "demo": "Demo Video",
+    "roadmap": "Roadmap",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "joinWaitlist": "Get Early Access"
+  },
+  "Hero": {
+    "liveStatus": "● LIVE (WS) · 12ms",
+    "liveStatusAria": "System WebSocket connection active",
+    "titlePrefix": "For Indie Hackers & Builders",
+    "titleHighlight": "Desktop Control Center",
+    "subtitle": "Unify GitHub CI/CD, Coolify deployments, Stripe revenue telemetry, and PostgreSQL operations in one blazing-fast, monochrome desktop cockpit.",
+    "primaryCta": "Join Early Access",
+    "secondaryCta": "Watch Demo",
+    "osSupport": "Native builds in active development for macOS, Linux, and Windows."
+  },
+  "TelemetryBar": {
+    "vault": "AES-256-GCM VAULT",
+    "argon": "ARGON2ID KEY DERIVATION",
+    "jwt": "JWT HS256 + ROTATION",
+    "bff": "GO FIBER BFF (PORT 3000)",
+    "postgres": "POSTGRESQL 16 PGXPOOL",
+    "webhook": "HMAC SIGNED WEBHOOKS"
+  },
+  "Bento": {
+    "sectionBadge": "ARCHITECTURE & CAPABILITIES",
+    "sectionTitle": "Engineered for Raw Productivity",
+    "sectionSubtitle": "No decorative clutter. Pure telemetry, zero-leak security, and instantaneous response.",
+    "vaultTitle": "Zero-Token Leak (Vault Security)",
+    "vaultDesc": "Your Stripe, GitHub, and Coolify tokens never linger in plaintext memory. Encrypted on ingestion with AES-256-GCM.",
+    "pipelineTitle": "Release Pipeline & Go/No-Go Checks",
+    "pipelineDesc": "Observe the whole flow from Git push to release announcement. Telemetry and CI health are verified at every gate.",
+    "pipelinePush": "PUSH",
+    "pipelineCi": "CI RUN",
+    "pipelineDeploy": "DEPLOY",
+    "pipelineRelease": "RELEASE",
+    "pipelineAnnounce": "ANNOUNCE",
+    "sreTitle": "Gemini 2.0 SRE Assistant",
+    "sreDesc": "Instant root-cause analysis and one-click remediation commands when PostgreSQL connection locks or server errors strike.",
+    "sreLog": "FATAL: remaining connection slots are reserved for non-replication superuser connections",
+    "sreAnalysis": "pgxpool connection limit reached. Recommended fix: enable PgBouncer transaction pooling or increase max_connections.",
+    "sreAction": "ALTER SYSTEM SET max_connections = 200;",
+    "growthTitle": "Growth & Business Cockpit",
+    "growthDesc": "Live MRR, runway runway estimations, and active waitlist metrics pulled directly from your telemetry pipeline.",
+    "demoDataNotice": "DEMO DATA"
+  },
+  "DemoVideo": {
+    "badge": "PRODUCT PREVIEW",
+    "title": "See NexusApp in Action",
+    "subtitle": "Seamless dark/light theme switching, live telemetry streams, and keyboard-first command palette workflow.",
+    "play": "Play Preview Demo",
+    "videoNote": "Desktop application is currently in private development. Interactive demo video will be updated regularly."
+  },
+  "Terminal": {
+    "badge": "DEVELOPER EXPERIENCE",
+    "title": "Fully Compatible with BFF API",
+    "subtitle": "Plug your custom workflows in seconds using our TypeScript SDK, direct cURL calls, or native Go client.",
+    "tabTs": "TypeScript SDK",
+    "tabCurl": "cURL",
+    "tabGo": "Go Client",
+    "copy": "Copy",
+    "copied": "✓ Copied",
+    "previewNotice": "Preview API Specification (subject to change prior to public launch)"
+  },
+  "Roadmap": {
+    "badge": "DEVELOPMENT ROADMAP",
+    "title": "Transparent Progress",
+    "subtitle": "We ship telemetry updates and platform integrations to our staging environments every week.",
+    "now": "Now (In Active Development)",
+    "next": "Next (Planned Q1)",
+    "later": "Post-Launch"
+  },
+  "Pricing": {
+    "badge": "PLANNED PRICING",
+    "title": "Pre-Launch Target Tiers",
+    "subtitle": "The application is currently unreleased. Early access waitlist members receive 50% off for their first 6 months.",
+    "monthly": "Monthly",
+    "annual": "Annual",
+    "annualDiscount": "2 MONTHS FREE",
+    "perMonth": "/mo",
+    "perYear": "/yr",
+    "mostPopular": "MOST POPULAR",
+    "cta": "Join Waitlist for Tier",
+    "notice": "* Pricing displayed is for pre-launch planning purposes. Subscriptions are not yet live."
+  },
+  "Faq": {
+    "badge": "FREQUENTLY ASKED",
+    "title": "Common Questions",
+    "subtitle": "Everything you need to know about NexusApp and the early access program."
+  },
+  "Waitlist": {
+    "badge": "EARLY ACCESS LIST",
+    "title": "Be First to Command Your Stack",
+    "subtitle": "Join independent software makers shaping the development of the ultimate indie desktop cockpit.",
+    "placeholder": "you@domain.com",
+    "submit": "Join Waitlist",
+    "submitting": "Submitting...",
+    "success": "✓ You are on the waitlist! We will notify you when closed beta seats unlock.",
+    "privacy": "Zero spam. Your email will strictly be used for early access invitations and product updates."
+  },
+  "Contact": {
+    "badge": "GET IN TOUCH",
+    "title": "Feedback & Direct Contact",
+    "subtitle": "Have a specific integration request or want to talk to the founding engineers? Send us a line.",
+    "name": "Your Name",
+    "email": "Your Email",
+    "message": "Your Message",
+    "submit": "Send Message",
+    "submitting": "Sending...",
+    "success": "✓ Message delivered. We will respond within 24 hours."
+  },
+  "Footer": {
+    "rights": "All rights reserved.",
+    "systemStatus": "SITE OPERATIONAL",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "github": "GitHub",
+    "twitter": "X (Twitter)"
+  }
+}

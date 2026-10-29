@@ -1,0 +1,126 @@
+{
+  "Navbar": {
+    "brand": "NexusApp",
+    "badge": "ERKEN ERİŞİM · GELİŞTİRME AŞAMASINDA",
+    "features": "Özellikler",
+    "demo": "Demo Video",
+    "roadmap": "Yol Haritası",
+    "pricing": "Fiyatlandırma",
+    "faq": "SSS",
+    "contact": "İletişim",
+    "joinWaitlist": "Erken Erişim Al"
+  },
+  "Hero": {
+    "liveStatus": "● CANLI (WS) · 12ms",
+    "liveStatusAria": "Sistem WebSocket bağlantısı aktif",
+    "titlePrefix": "Bağımsız Geliştiriciler İçin",
+    "titleHighlight": "Masaüstü Kontrol Merkezi",
+    "subtitle": "GitHub CI/CD, Coolify sunucu telemetrisi, Stripe MRR ve PostgreSQL operasyonlarını tek bir yüksek performanslı, monokrom masaüstü kokpitinden yönetin.",
+    "primaryCta": "Erken Erişime Katıl",
+    "secondaryCta": "Demoyu İzle",
+    "osSupport": "macOS, Linux ve Windows için yerel mimaride geliştirilmektedir."
+  },
+  "TelemetryBar": {
+    "vault": "AES-256-GCM KASA",
+    "argon": "ARGON2ID ŞİFRELEME",
+    "jwt": "JWT HS256 + ROTASYON",
+    "bff": "GO FIBER BFF (PORT 3000)",
+    "postgres": "POSTGRESQL 16 PGXPOOL",
+    "webhook": "HMAC İMZALI WEBHOOK"
+  },
+  "Bento": {
+    "sectionBadge": "MİMARİ VE YETENEKLER",
+    "sectionTitle": "Mühendislik Standartlarında İnşa Edildi",
+    "sectionSubtitle": "Gereksiz süslemeler yok. Saf telemetri, sıfır sızıntı güvenliği ve anlık kontrol.",
+    "vaultTitle": "Sıfır Anahtar Sızıntısı (Vault Security)",
+    "vaultDesc": "Stripe, GitHub ve Coolify API anahtarlarınız asla bellekte düz metin kalmaz. AES-256-GCM ile anında şifrelenir.",
+    "pipelineTitle": "Dağıtım Hattı ve Go/No-Go Denetimi",
+    "pipelineDesc": "Push'tan duyuruya kadar tüm akışı canlı izleyin. Her adımda telemetri ve CI logları doğrulanır.",
+    "pipelinePush": "PUSH",
+    "pipelineCi": "CI RUN",
+    "pipelineDeploy": "DEPLOY",
+    "pipelineRelease": "RELEASE",
+    "pipelineAnnounce": "ANNOUNCE",
+    "sreTitle": "Gemini 2.0 SRE Asistanı",
+    "sreDesc": "PostgreSQL kilitlenmeleri ve Fiber bağlantı tükenmelerinde anında kök neden analizi ve tek tıkla onarım komutu üretir.",
+    "sreLog": "FATAL: remaining connection slots are reserved for non-replication superuser connections",
+    "sreAnalysis": "pgxpool maksimum bağlantı eşiğine ulaşıldı. PgBouncer havuz modu veya max_connections artırımı önerilir.",
+    "sreAction": "ALTER SYSTEM SET max_connections = 200;",
+    "growthTitle": "Büyüme & İş Kokpiti",
+    "growthDesc": "Stripe ve veritabanınızdan doğrudan hesaplanan canlı MRR, pist süresi ve bekleme listesi metrikleri.",
+    "demoDataNotice": "DEMO VERİ"
+  },
+  "DemoVideo": {
+    "badge": "ÜRÜN TANITIMI",
+    "title": "NexusApp'i Canlı Görün",
+    "subtitle": "Koyu ve açık tema geçişi, telemetri akışı ve klavye odaklı komut paleti çalışma şekli.",
+    "play": "Tanıtım Videosunu Oynat",
+    "videoNote": "Masaüstü uygulaması geliştirme aşamasındadır. Tanıtım demosu yakında tam video olarak güncellenecektir."
+  },
+  "Terminal": {
+    "badge": "GELİŞTİRİCİ DENEYİMİ",
+    "title": "BFF API ile Tam Uyumlu",
+    "subtitle": "İster TypeScript SDK, ister cURL, ister yerel Go istemcisi ile kendi otomasyonlarınızı bağlayın.",
+    "tabTs": "TypeScript SDK",
+    "tabCurl": "cURL",
+    "tabGo": "Go Client",
+    "copy": "Kopyala",
+    "copied": "✓ Kopyalandı",
+    "previewNotice": "Önizleme API Spesifikasyonudur (Yayından önce güncellenebilir)"
+  },
+  "Roadmap": {
+    "badge": "GELİŞTİRME SÜRECİ",
+    "title": "Şeffaf Yol Haritası",
+    "subtitle": "Her hafta yeni telemetri ve entegrasyon modüllerini canlı test ortamımıza dahil ediyoruz.",
+    "now": "Şimdi (Geliştiriliyor)",
+    "next": "Sırada (Planlanan)",
+    "later": "Lansman Sonrası"
+  },
+  "Pricing": {
+    "badge": "PLANLANAN FİYATLANDIRMA",
+    "title": "Lansman Öncesi Tahmini Planlar",
+    "subtitle": "Uygulama henüz yayında değildir. Erken erişime katılanlara ilk 6 ay %50 indirim tanımlanacaktır.",
+    "monthly": "Aylık",
+    "annual": "Yıllık",
+    "annualDiscount": "2 AY ÜCRETSİZ",
+    "perMonth": "/ay",
+    "perYear": "/yıl",
+    "mostPopular": "EN POPÜLER",
+    "cta": "Bu Plan İçin Sıraya Gir",
+    "notice": "* Fiyatlar lansman öncesi planlama amaçlıdır, satış henüz başlamamıştır."
+  },
+  "Faq": {
+    "badge": "MERAK EDİLENLER",
+    "title": "Sıkça Sorulan Sorular",
+    "subtitle": "NexusApp ve erken erişim süreci hakkında bilmeniz gereken her şey."
+  },
+  "Waitlist": {
+    "badge": "ERKEN ERİŞİM LİSTESİ",
+    "title": "Geliştirici Kokpitinde İlk Siz Yer Alın",
+    "subtitle": "Kapalı beta başladığında ilk test eden ve topluluk kararlarını şekillendiren bağımsız geliştiricilerden biri olun.",
+    "placeholder": "eposta@sirketiniz.com",
+    "submit": "Sıraya Katıl",
+    "submitting": "Kaydediliyor...",
+    "success": "✓ Sıraya başarıyla eklendiniz! Beta davetiyeniz bu adrese iletilecektir.",
+    "privacy": "Spam göndermiyoruz. E-posta adresiniz yalnızca beta güncellemeleri ve erişim daveti için saklanır."
+  },
+  "Contact": {
+    "badge": "BİZE ULAŞIN",
+    "title": "Geri Bildirim ve İletişim",
+    "subtitle": "Bir özellik mi talep etmek istiyorsunuz ya da ekibimizle mi görüşmek istiyorsunuz? Doğrudan yazın.",
+    "name": "Adınız",
+    "email": "E-posta Adresiniz",
+    "message": "Mesajınız",
+    "submit": "Mesajı Gönder",
+    "submitting": "Gönderiliyor...",
+    "success": "✓ Mesajınız iletildi. En geç 24 saat içinde dönüş yapacağız."
+  },
+  "Footer": {
+    "rights": "Tüm hakları saklıdır.",
+    "systemStatus": "SITE OPERATIONAL",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Koşulları",
+    "github": "GitHub",
+    "twitter": "X (Twitter)"
+  }
+}

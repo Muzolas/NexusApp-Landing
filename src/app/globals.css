@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --canvas: #ffffff;
+    --surface: #f7f8fa;
+    --elevated: #eff1f4;
+    --surgical: #e4e4e7;
+    --primary: #000000;
+    --muted: #52525b;
+    --live: #059669;
+    --status-error: #dc2626;
+    --status-warn: #d97706;
+  }
+
+  .dark {
+    --canvas: #000000;
+    --surface: #0c0c0c;
+    --elevated: #141414;
+    --surgical: #262626;
+    --primary: #ffffff;
+    --muted: #8e8e93;
+    --live: #10b981;
+    --status-error: #ff3b30;
+    --status-warn: #ffb000;
+  }
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-elevated: var(--elevated);
+  --color-surgical: var(--surgical);
+  --color-primary: var(--primary);
+  --color-muted: var(--muted);
+  --color-live: var(--live);
+  --color-status-error: var(--status-error);
+  --color-status-warn: var(--status-warn);
+}
+
+body {
+  background-color: var(--canvas);
+  color: var(--primary);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+}
+
+/* Technical 32px grid pattern with smooth radial fade */
+.bg-tech-grid {
+  background-image: 
+    linear-gradient(to right, rgba(128, 128, 128, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(128, 128, 128, 0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 40%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 40%, transparent 85%);
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surgical);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
