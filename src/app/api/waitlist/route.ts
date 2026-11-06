@@ -1,43 +1,27 @@
 import { NextResponse } from "next/server";
+import { isEmail, sendOwnerMail } from "@/lib/mail";
 
-// Fallback in-memory set for waitlist during pre-launch local testing
-const waitlistEmails = new Set<string>();
-
+// Early access / demo requests: each one is emailed to the owner, so nothing
+// depends on server memory. Without email set up the client uses mailto:.
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    const { email } = body;
-
-    if (!email || typeof email !== "string" || !email.includes("@")) {
-      return NextResponse.json(
-        { error: "Geçersiz e-posta adresi." },
-        { status: 400 }
-      );
+    const { email, locale } = await req.json();
+    if (!isEmail(email)) {
+      return NextResponse.json({ error: "A valid email is required." }, { status: 400 });
     }
 
-    const cleanEmail = email.trim().toLowerCase();
-    waitlistEmails.add(cleanEmail);
-
-    // If DATABASE_URL is configured (e.g. Neon or Postgres), insert record
-    if (process.env.DATABASE_URL) {
-      // Integration hook ready for pg/pgxpool
-    }
-
-    return NextResponse.json({
-      success: true,
-      message: "Waitlist kaydı başarılı.",
-      totalRegistered: waitlistEmails.size,
+    const clean = email.trim().toLowerCase();
+    const result = await sendOwnerMail({
+      subject: `[NexusApp] Early access / demo request: ${clean}`,
+      text: `New early access and demo request.\n\nEmail: ${clean}\nLanguage: ${locale ?? "-"}\nTime: ${new Date().toISOString()}`,
+      replyTo: clean,
     });
-  } catch {
-    return NextResponse.json(
-      { error: "Sunucu hatası oluştu." },
-      { status: 500 }
-    );
-  }
-}
 
-export async function GET() {
-  return NextResponse.json({
-    count: waitlistEmails.size,
-  });
+    if (result !== "sent") {
+      return NextResponse.json({ error: "Email delivery unavailable.", fallback: "mailto" }, { status: 503 });
+    }
+    return NextResponse.json({ success: true });
+  } catch {
+    return NextResponse.json({ error: "Invalid request." }, { status: 400 });
+  }
 }

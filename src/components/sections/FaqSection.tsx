@@ -20,12 +20,12 @@ export function FaqSection() {
     },
     {
       question: {
-        tr: "Hangi masaüstü işletim sistemleri destekleniyor?",
-        en: "Which desktop operating systems are supported?",
+        tr: "Kurulum gerekiyor mu? Nasıl demo alabilirim?",
+        en: "Do I need to install anything? How do I get a demo?",
       },
       answer: {
-        tr: "macOS (Apple Silicon M1/M2/M3 ve Intel), Linux (AppImage, deb, rpm ve Arch AUR) ve Windows 10/11 (.exe ve winget) için yerel Flutter Desktop mimarisinde geliştirilmektedir.",
-        en: "Native builds are being compiled for macOS (Apple Silicon M1/M2/M3 & Intel), Linux (AppImage, deb, rpm, Arch AUR), and Windows 10/11 (.exe & winget).",
+        tr: "Hayır. NexusApp bir web uygulamasıdır; güncel bir tarayıcıda (Chrome, Edge, Firefox, Safari) çalışır. Demo için sayfanın altındaki forma e-postanızı bırakın ya da contact@beishang.dev adresine yazın; size özel bir demo için e-postayla dönüş yapıyoruz.",
+        en: "No. NexusApp is a web app that runs in any modern browser (Chrome, Edge, Firefox, Safari). For a demo, leave your email in the form below or write to contact@beishang.dev — we reply by email to set up a personal walkthrough.",
       },
     },
     {
@@ -44,8 +44,8 @@ export function FaqSection() {
         en: "Is NexusApp open source?",
       },
       answer: {
-        tr: "Masaüstü istemcimiz ve Go BFF çekirdeğimiz GitHub üzerinde şeffaf bir şekilde geliştirilmektedir. Kurumsal entegrasyonlar ve gelişmiş yapay zeka SRE modülleri ticari lisans kapsamında sunulacaktır.",
-        en: "Our core desktop client and Go BFF architecture are developed transparently on GitHub. Enterprise adapters and advanced SRE modules will be distributed under a commercial license.",
+        tr: "Web istemcimiz ve Go BFF çekirdeğimiz GitHub üzerinde şeffaf bir şekilde geliştirilmektedir. Kurumsal entegrasyonlar ve gelişmiş yapay zeka SRE modülleri ticari lisans kapsamında sunulacaktır.",
+        en: "Our core web client and Go BFF architecture are developed transparently on GitHub. Enterprise adapters and advanced SRE modules will be distributed under a commercial license.",
       },
     },
   ];

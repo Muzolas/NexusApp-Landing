@@ -36,13 +36,14 @@ export function ContactSection() {
         body: JSON.stringify({ ...formData, locale }),
       });
 
-      if (!res.ok) {
-        throw new Error("Mesaj iletilemedi.");
-      }
-
+      if (!res.ok) throw new Error("send failed");
       setSubmitted(true);
     } catch {
-      setErrorMsg("Bağlantı hatası oluştu, lütfen doğrudan contact@beishang.dev adresine yazın.");
+      // Email is not set up or failed: hand the message to the visitor's mail app.
+      const subject = encodeURIComponent(`NexusApp — ${formData.name || formData.email}`);
+      const body = encodeURIComponent(`${formData.message}\n\n— ${formData.email}`);
+      window.location.href = `mailto:${siteConfig.links.contactEmail}?subject=${subject}&body=${body}`;
+      setSubmitted(true);
     } finally {
       setIsSubmitting(false);
     }

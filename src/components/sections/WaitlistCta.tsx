@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
+import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { ShieldCheck, Mail, CheckCircle2 } from "lucide-react";
@@ -35,13 +36,14 @@ export function WaitlistCta() {
         body: JSON.stringify({ email, locale }),
       });
 
-      if (!res.ok) {
-        throw new Error("Kayıt sırasında bir hata oluştu.");
-      }
-
+      if (!res.ok) throw new Error("send failed");
       setSubmitted(true);
     } catch {
-      setErrorMsg("Bir bağlantı hatası oluştu, lütfen tekrar deneyin.");
+      // Email is not set up or failed: send the request from the visitor's mail app.
+      const subject = encodeURIComponent("NexusApp early access / demo request");
+      const body = encodeURIComponent(`Hi, I would like early access and a demo of NexusApp.\n\nEmail: ${email}`);
+      window.location.href = `mailto:${siteConfig.links.contactEmail}?subject=${subject}&body=${body}`;
+      setSubmitted(true);
     } finally {
       setIsSubmitting(false);
     }

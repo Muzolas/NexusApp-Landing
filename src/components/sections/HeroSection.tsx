@@ -30,14 +30,8 @@ export function HeroSection() {
     document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const osLabel =
-    os === "macos"
-      ? "macOS (Apple Silicon / Intel)"
-      : os === "linux"
-      ? "Linux (.AppImage / AUR)"
-      : os === "windows"
-      ? "Windows (.exe / winget)"
-      : "macOS · Linux · Windows";
+  // Web app: name the browsers instead of desktop builds.
+  const osLabel = os === "macos" ? "Web · Safari / Chrome" : "Web · Chrome / Edge / Firefox";
 
   return (
     <section
@@ -116,7 +110,7 @@ export function HeroSection() {
                 <div className="w-3 h-3 rounded-full bg-status-warn/80" />
                 <div className="w-3 h-3 rounded-full bg-live/80" />
                 <span className="ml-3 font-mono text-xs text-muted">
-                  NexusApp Desktop &mdash; telemetry:connected (12ms)
+                  app.nexusapp NexusApp Desktop &mdash; telemetry:connected (12ms)mdash; telemetry:connected (12ms)
                 </span>
               </div>
               <div className="hidden sm:flex items-center gap-3 font-mono text-[11px] text-muted">

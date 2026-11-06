@@ -14,11 +14,11 @@
     "liveStatus": "● LIVE (WS) · 12ms",
     "liveStatusAria": "System WebSocket connection active",
     "titlePrefix": "For Indie Hackers & Builders",
-    "titleHighlight": "Desktop Control Center",
-    "subtitle": "Unify GitHub CI/CD, Coolify deployments, Stripe revenue telemetry, and PostgreSQL operations in one blazing-fast, monochrome desktop cockpit.",
-    "primaryCta": "Join Early Access",
+    "titleHighlight": "Control Center",
+    "subtitle": "Unify GitHub CI/CD, Vercel and Coolify deployments, Stripe revenue and your database in one fast, monochrome web cockpit — with AI that tells you what changed and why.",
+    "primaryCta": "Request a Demo",
     "secondaryCta": "Watch Demo",
-    "osSupport": "Native builds in active development for macOS, Linux, and Windows."
+    "osSupport": "Runs in your browser. No install. Demos are by request — we reply by email."
   },
   "TelemetryBar": {
     "vault": "AES-256-GCM VAULT",
@@ -97,7 +97,7 @@
   "Waitlist": {
     "badge": "EARLY ACCESS LIST",
     "title": "Be First to Command Your Stack",
-    "subtitle": "Join independent software makers shaping the development of the ultimate indie desktop cockpit.",
+    "subtitle": "Leave your email for early access and a personal demo. We reply by email within 48 hours.",
     "placeholder": "you@domain.com",
     "submit": "Join Waitlist",
     "submitting": "Submitting...",

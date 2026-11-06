@@ -14,11 +14,11 @@
     "liveStatus": "● CANLI (WS) · 12ms",
     "liveStatusAria": "Sistem WebSocket bağlantısı aktif",
     "titlePrefix": "Bağımsız Geliştiriciler İçin",
-    "titleHighlight": "Masaüstü Kontrol Merkezi",
-    "subtitle": "GitHub CI/CD, Coolify sunucu telemetrisi, Stripe MRR ve PostgreSQL operasyonlarını tek bir yüksek performanslı, monokrom masaüstü kokpitinden yönetin.",
-    "primaryCta": "Erken Erişime Katıl",
+    "titleHighlight": "Kontrol Merkezi",
+    "subtitle": "GitHub CI/CD, Vercel ve Coolify dağıtımları, Stripe geliri ve veritabanınızı tek bir hızlı, monokrom web kokpitinde birleştirin — neyin neden değiştiğini anlatan yapay zekâ ile.",
+    "primaryCta": "Demo İste",
     "secondaryCta": "Demoyu İzle",
-    "osSupport": "macOS, Linux ve Windows için yerel mimaride geliştirilmektedir."
+    "osSupport": "Tarayıcınızda çalışır, kurulum gerekmez. Demolar talep üzerine — e-postayla dönüş yapıyoruz."
   },
   "TelemetryBar": {
     "vault": "AES-256-GCM KASA",
@@ -97,7 +97,7 @@
   "Waitlist": {
     "badge": "ERKEN ERİŞİM LİSTESİ",
     "title": "Geliştirici Kokpitinde İlk Siz Yer Alın",
-    "subtitle": "Kapalı beta başladığında ilk test eden ve topluluk kararlarını şekillendiren bağımsız geliştiricilerden biri olun.",
+    "subtitle": "Erken erişim ve size özel bir demo için e-postanızı bırakın. 48 saat içinde e-postayla dönüş yapıyoruz.",
     "placeholder": "eposta@sirketiniz.com",
     "submit": "Sıraya Katıl",
     "submitting": "Kaydediliyor...",
