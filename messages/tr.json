@@ -53,9 +53,9 @@
   "DemoVideo": {
     "badge": "ÜRÜN TANITIMI",
     "title": "NexusApp'i Canlı Görün",
-    "subtitle": "Koyu ve açık tema geçişi, telemetri akışı ve klavye odaklı komut paleti çalışma şekli.",
+    "subtitle": "Pilot, Otopilot, gelir, dağıtımlar, CI, veritabanı, loglar ve giderler üzerinden demo verisiyle kısa bir tur.",
     "play": "Tanıtım Videosunu Oynat",
-    "videoNote": "Masaüstü uygulaması geliştirme aşamasındadır. Tanıtım demosu yakında tam video olarak güncellenecektir."
+    "meta": "1080p · 1:49 · Ürün turu"
   },
   "Terminal": {
     "badge": "GELİŞTİRİCİ DENEYİMİ",

@@ -53,9 +53,9 @@
   "DemoVideo": {
     "badge": "PRODUCT PREVIEW",
     "title": "See NexusApp in Action",
-    "subtitle": "Seamless dark/light theme switching, live telemetry streams, and keyboard-first command palette workflow.",
+    "subtitle": "A guided tour of Pilot, Autopilot, revenue, deployments, CI, database, logs and expenses — shown with demo data.",
     "play": "Play Preview Demo",
-    "videoNote": "Desktop application is currently in private development. Interactive demo video will be updated regularly."
+    "meta": "1080p · 1:49 · Product tour"
   },
   "Terminal": {
     "badge": "DEVELOPER EXPERIENCE",

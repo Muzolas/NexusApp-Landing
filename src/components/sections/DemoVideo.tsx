@@ -2,9 +2,11 @@
 
 import React, { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Play, Monitor } from "lucide-react";
+import { Play } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
+
+const VIDEO_SRC = "/videos/nexusapp-demo.mp4";
+const POSTER_SRC = "/videos/nexusapp-demo-poster.jpg";
 
 export function DemoVideo() {
   const t = useTranslations("DemoVideo");
@@ -24,43 +26,45 @@ export function DemoVideo() {
         </p>
       </div>
 
-      <div className="max-w-4xl mx-auto rounded-2xl border border-surgical bg-surface overflow-hidden shadow-2xl relative aspect-video flex items-center justify-center">
+      <div className="max-w-4xl mx-auto rounded-2xl border border-surgical bg-black overflow-hidden shadow-2xl relative aspect-video flex items-center justify-center">
         {isPlaying ? (
-          <div className="w-full h-full bg-black flex flex-col items-center justify-center p-8 text-center">
-            <Monitor className="w-12 h-12 text-primary mb-4" />
-            <h3 className="text-lg font-mono font-bold text-primary">NexusApp Desktop Walkthrough</h3>
-            <p className="text-xs font-mono text-muted mt-2 max-w-md">
-              {t("videoNote")}
-            </p>
-            <Button
-              variant="outline"
-              size="sm"
-              className="mt-6"
-              onClick={() => setIsPlaying(false)}
-            >
-              Kapat
-            </Button>
-          </div>
+          <video
+            className="w-full h-full object-contain bg-black"
+            src={VIDEO_SRC}
+            poster={POSTER_SRC}
+            controls
+            autoPlay
+            playsInline
+            preload="auto"
+          />
         ) : (
-          <div
-            className="relative w-full h-full bg-canvas/90 flex flex-col items-center justify-center p-8 text-center group cursor-pointer"
+          <button
+            type="button"
+            aria-label={t("play")}
+            className="relative w-full h-full flex flex-col items-center justify-center p-8 text-center group cursor-pointer"
             onClick={() => setIsPlaying(true)}
           >
-            {/* Visual background simulation */}
-            <div className="absolute inset-0 bg-tech-grid opacity-30" />
-            
+            {/* Poster: the first scene of the tour */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={POSTER_SRC}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity duration-300"
+            />
+            <div className="absolute inset-0 bg-black/40" />
+
             {/* Play Button Trigger */}
-            <div className="relative z-10 w-16 h-16 sm:w-20 sm:h-20 rounded-full border border-surgical bg-surface/80 backdrop-blur-md flex items-center justify-center group-hover:scale-105 group-hover:border-primary transition-all duration-300 shadow-xl">
-              <Play className="w-6 h-6 sm:w-8 sm:h-8 text-primary ml-1 fill-current" />
+            <div className="relative z-10 w-16 h-16 sm:w-20 sm:h-20 rounded-full border border-white/30 bg-black/60 backdrop-blur-md flex items-center justify-center group-hover:scale-105 group-hover:border-white transition-all duration-300 shadow-xl">
+              <Play className="w-6 h-6 sm:w-8 sm:h-8 text-white ml-1 fill-current" />
             </div>
 
-            <div className="relative z-10 mt-6 font-mono text-sm font-semibold text-primary">
+            <div className="relative z-10 mt-6 font-mono text-sm font-semibold text-white">
               {t("play")}
             </div>
-            <div className="relative z-10 mt-2 text-xs font-mono text-muted">
-              1080p 60fps &middot; Monochrome Cockpit Tour (2:40)
+            <div className="relative z-10 mt-2 text-xs font-mono text-white/70">
+              {t("meta")}
             </div>
-          </div>
+          </button>
         )}
       </div>
     </section>
