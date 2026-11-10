@@ -7,3 +7,9 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## Design
+
+- For any page or section work, load the `design-taste-frontend` skill (`.claude/skills/design-taste-frontend`).
+- Keep the NexusApp monochrome identity (black/white, status colors only for status); see `../NexusApp/DESIGN.md`.
+- No invented customers, numbers, testimonials or press. The product has no public customer data yet.
