@@ -93,7 +93,7 @@ export function WaitlistCta() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={t("placeholder")}
-                    className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-surgical bg-canvas text-sm font-mono text-primary placeholder:text-muted/60 focus:outline-none focus:border-primary transition-colors"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-surgical bg-canvas text-sm font-mono text-primary placeholder:text-muted/60 focus:outline-none focus:border-accent transition-colors"
                   />
                 </div>
                 <Button type="submit" disabled={isSubmitting} size="md">

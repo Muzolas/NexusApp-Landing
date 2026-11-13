@@ -1,41 +1,62 @@
 @import "tailwindcss";
 
 @layer base {
+  /* Palette source: ../NexusApp/design/brand-palette.json (Nexus Mulberry) */
   :root {
-    --canvas: #ffffff;
-    --surface: #f7f8fa;
-    --elevated: #eff1f4;
-    --surgical: #e4e4e7;
-    --primary: #000000;
-    --muted: #52525b;
-    --live: #059669;
-    --status-error: #dc2626;
-    --status-warn: #d97706;
+    --canvas: #f0eee9;
+    --card: #ffffff;
+    --surface: #e9e5df;
+    --elevated: #e3ded7;
+    --surgical: #e0dbd3;
+    --border-strong: #c1b9b0;
+    --primary: #1e161c;
+    --secondary: #574b53;
+    --muted: #655860;
+    --accent: #5b2a4e;
+    --on-accent: #ffffff;
+    --live: #1b7d52;
+    --status-warn: #8f6200;
+    --status-error: #c2410c;
+    --status-info: #2e62c0;
+    --shadow-e3: 0 24px 56px -12px rgba(20, 20, 15, 0.24);
   }
 
   .dark {
-    --canvas: #000000;
-    --surface: #0c0c0c;
-    --elevated: #141414;
-    --surgical: #262626;
-    --primary: #ffffff;
-    --muted: #8e8e93;
-    --live: #10b981;
-    --status-error: #ff3b30;
-    --status-warn: #ffb000;
+    --canvas: #120d11;
+    --card: #1b1419;
+    --surface: #241b21;
+    --elevated: #2b2128;
+    --surgical: #2d232a;
+    --border-strong: #4b3c46;
+    --primary: #f0ebee;
+    --secondary: #b3a6ae;
+    --muted: #9a8c95;
+    --accent: #d4a0c8;
+    --on-accent: #2a1424;
+    --live: #4cc38a;
+    --status-warn: #e8b64a;
+    --status-error: #f2704f;
+    --status-info: #8fa8f0;
+    --shadow-e3: 0 24px 56px -12px rgba(0, 0, 0, 0.75);
   }
 }
 
 @theme inline {
   --color-canvas: var(--canvas);
+  --color-card: var(--card);
   --color-surface: var(--surface);
   --color-elevated: var(--elevated);
   --color-surgical: var(--surgical);
+  --color-border-strong: var(--border-strong);
   --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
   --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
   --color-live: var(--live);
   --color-status-error: var(--status-error);
   --color-status-warn: var(--status-warn);
+  --color-status-info: var(--status-info);
 }
 
 body {
@@ -45,11 +66,15 @@ body {
   overflow-x: hidden;
 }
 
+.shadow-e3 {
+  box-shadow: var(--shadow-e3);
+}
+
 /* Technical 32px grid pattern with smooth radial fade */
 .bg-tech-grid {
-  background-image: 
-    linear-gradient(to right, rgba(128, 128, 128, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(128, 128, 128, 0.07) 1px, transparent 1px);
+  background-image:
+    linear-gradient(to right, rgba(154, 140, 149, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(154, 140, 149, 0.08) 1px, transparent 1px);
   background-size: 32px 32px;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 40%, transparent 85%);
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 40%, transparent 85%);

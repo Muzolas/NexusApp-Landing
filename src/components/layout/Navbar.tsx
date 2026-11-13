@@ -46,8 +46,8 @@ export function Navbar() {
             href="#"
             className="flex items-center gap-2 text-primary font-mono font-bold tracking-tight text-base hover:opacity-80 transition-opacity"
           >
-            <div className="w-7 h-7 rounded-lg border border-surgical bg-elevated flex items-center justify-center">
-              <Terminal className="w-4 h-4 text-primary" />
+            <div className="w-7 h-7 rounded-lg bg-accent text-on-accent flex items-center justify-center shadow-sm">
+              <Terminal className="w-4 h-4" />
             </div>
             <span>{siteConfig.name}</span>
           </a>
@@ -56,61 +56,61 @@ export function Navbar() {
             href={siteConfig.links.releases}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center text-[10px] font-mono px-2 py-0.5 rounded border border-surgical bg-elevated text-muted hover:text-primary hover:border-muted transition-colors tracking-wide"
+            className="hidden xl:inline-flex items-center whitespace-nowrap text-[10px] font-mono px-2 py-0.5 rounded border border-surgical bg-elevated text-muted hover:text-primary hover:border-muted transition-colors tracking-wide"
           >
-            {siteConfig.earlyAccessLabel}
+            {t("badge")}
           </a>
         </div>
 
         {/* Desktop Nav Items */}
-        <nav className="hidden md:flex items-center gap-6 text-xs font-mono text-muted">
+        <nav className="hidden md:flex items-center gap-4 lg:gap-5 xl:gap-6 text-xs font-mono text-muted">
           <button
             onClick={() => scrollToSection("features")}
-            className="hover:text-primary transition-colors cursor-pointer"
+            className="hover:text-primary transition-colors cursor-pointer whitespace-nowrap"
           >
             {t("features")}
           </button>
           <button
             onClick={() => scrollToSection("demo")}
-            className="hover:text-primary transition-colors cursor-pointer"
+            className="hover:text-primary transition-colors cursor-pointer whitespace-nowrap"
           >
             {t("demo")}
           </button>
           <button
             onClick={() => scrollToSection("roadmap")}
-            className="hover:text-primary transition-colors cursor-pointer"
+            className="hover:text-primary transition-colors cursor-pointer whitespace-nowrap"
           >
             {t("roadmap")}
           </button>
           <button
             onClick={() => scrollToSection("pricing")}
-            className="hover:text-primary transition-colors cursor-pointer"
+            className="hover:text-primary transition-colors cursor-pointer whitespace-nowrap"
           >
             {t("pricing")}
           </button>
           <button
             onClick={() => scrollToSection("faq")}
-            className="hover:text-primary transition-colors cursor-pointer"
+            className="hover:text-primary transition-colors cursor-pointer whitespace-nowrap"
           >
             {t("faq")}
           </button>
           <button
             onClick={() => scrollToSection("contact")}
-            className="hover:text-primary transition-colors cursor-pointer"
+            className="hover:text-primary transition-colors cursor-pointer whitespace-nowrap"
           >
             {t("contact")}
           </button>
         </nav>
 
         {/* Action Controls */}
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-2.5 shrink-0">
           <LangSwitch />
           <ThemeToggle />
 
           <Button
             size="sm"
             onClick={() => scrollToSection("waitlist")}
-            className="hidden sm:inline-flex"
+            className="hidden sm:inline-flex whitespace-nowrap"
           >
             {t("joinWaitlist")}
           </Button>

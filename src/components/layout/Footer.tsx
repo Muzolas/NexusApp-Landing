@@ -14,8 +14,8 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand & Status Indicator */}
           <div className="flex items-center gap-3">
-            <div className="w-6 h-6 rounded border border-surgical bg-elevated flex items-center justify-center">
-              <Terminal className="w-3.5 h-3.5 text-primary" />
+            <div className="w-6 h-6 rounded bg-accent text-on-accent flex items-center justify-center">
+              <Terminal className="w-3.5 h-3.5" />
             </div>
             <span className="font-bold text-primary">{siteConfig.name}</span>
             <span className="text-surgical">|</span>

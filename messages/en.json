@@ -15,7 +15,7 @@
     "liveStatusAria": "System WebSocket connection active",
     "titlePrefix": "For Indie Hackers & Builders",
     "titleHighlight": "Control Center",
-    "subtitle": "Unify GitHub CI/CD, Vercel and Coolify deployments, Stripe revenue and your database in one fast, monochrome web cockpit — with AI that tells you what changed and why.",
+    "subtitle": "Unify GitHub CI/CD, Vercel and Coolify deployments, Stripe revenue and your database in one fast, quiet web cockpit — with AI that tells you what changed and why.",
     "primaryCta": "Request a Demo",
     "secondaryCta": "Watch Demo",
     "osSupport": "Runs in your browser. No install. Demos are by request — we reply by email."
@@ -47,7 +47,7 @@
     "sreAnalysis": "pgxpool connection limit reached. Recommended fix: enable PgBouncer transaction pooling or increase max_connections.",
     "sreAction": "ALTER SYSTEM SET max_connections = 200;",
     "growthTitle": "Growth & Business Cockpit",
-    "growthDesc": "Live MRR, runway runway estimations, and active waitlist metrics pulled directly from your telemetry pipeline.",
+    "growthDesc": "Live MRR, runway estimations, and active waitlist metrics pulled directly from your telemetry pipeline.",
     "demoDataNotice": "DEMO DATA"
   },
   "DemoVideo": {

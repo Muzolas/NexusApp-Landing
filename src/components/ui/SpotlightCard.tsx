@@ -43,7 +43,8 @@ export function SpotlightCard({
       <div
         className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
-          background: `radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.08), transparent 80%)`,
+          background:
+            "radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), color-mix(in srgb, var(--accent) 12%, transparent), transparent 80%)",
         }}
       />
       <div className="relative z-10">{children}</div>

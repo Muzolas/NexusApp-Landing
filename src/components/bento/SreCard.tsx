@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/Badge";
 
 export function SreCard() {
   const t = useTranslations("Bento");
+  const tTerm = useTranslations("Terminal");
 
   return (
     <SpotlightCard className="col-span-1 md:col-span-2 flex flex-col justify-between">
@@ -52,7 +53,11 @@ export function SreCard() {
             <code className="text-[11px] text-primary truncate select-all">
               {t("sreAction")}
             </code>
-            <CopyButton textToCopy={t("sreAction")} />
+            <CopyButton
+              textToCopy={t("sreAction")}
+              label={tTerm("copy")}
+              copiedLabel={tTerm("copied")}
+            />
           </div>
         </div>
       </div>

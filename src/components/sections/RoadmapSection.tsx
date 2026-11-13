@@ -40,7 +40,9 @@ export function RoadmapSection() {
                   {cat.label}
                 </span>
                 <span className="font-mono text-xs text-muted">
-                  {cat.items.length} Modules
+                  {locale === "tr"
+                    ? `${cat.items.length} Modül`
+                    : `${cat.items.length} ${cat.items.length === 1 ? "Module" : "Modules"}`}
                 </span>
               </div>
 
@@ -73,7 +75,7 @@ export function RoadmapSection() {
                     {/* Progress Bar */}
                     <div className="w-full h-1 rounded-full bg-elevated overflow-hidden">
                       <div
-                        className="h-full bg-primary transition-all duration-500"
+                        className="h-full bg-accent transition-all duration-500"
                         style={{ width: `${item.progress}%` }}
                       />
                     </div>

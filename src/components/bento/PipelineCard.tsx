@@ -38,7 +38,7 @@ export function PipelineCard() {
 
       {/* Horizontal Pipeline Steps with Animated Data Beam */}
       <div className="mt-8 relative rounded-xl border border-surgical bg-canvas p-4 sm:p-5 overflow-hidden">
-        {/* Animated Data Beam along the track */}
+        {/* Animated Data Beam along the track (desktop horizontal strip only) */}
         <motion.div
           animate={{ x: ["-100%", "200%"] }}
           transition={{
@@ -46,14 +46,14 @@ export function PipelineCard() {
             duration: 3.5,
             ease: "easeInOut",
           }}
-          className="absolute top-1/2 left-0 w-32 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-80 pointer-events-none"
+          className="hidden sm:block absolute top-1/2 left-0 w-32 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent opacity-80 pointer-events-none"
         />
 
         <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 relative z-10">
           {steps.map((step) => (
             <div
               key={step.label}
-              className="flex flex-col items-center text-center p-2.5 rounded-lg border border-surgical bg-surface/70"
+              className="flex flex-col items-center text-center p-2.5 rounded-lg border border-surgical bg-surface"
             >
               <div className="flex items-center gap-1 text-[11px] font-mono text-muted uppercase">
                 <span>{step.label}</span>

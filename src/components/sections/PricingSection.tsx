@@ -65,8 +65,8 @@ export function PricingSection() {
         </div>
       </div>
 
-      {/* 5-Column Pricing Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+      {/* 5-Column Pricing Grid (wraps to 3 cols at lg/1024 so badges never collide) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
         {pricingTiers.map((tier) => {
           const price = isAnnual ? tier.annualPrice : tier.monthlyPrice;
           const periodLabel = isAnnual ? t("perYear") : t("perMonth");
@@ -77,13 +77,13 @@ export function PricingSection() {
               className={cn(
                 "rounded-2xl border p-5 flex flex-col justify-between transition-all duration-300 relative",
                 tier.popular
-                  ? "border-primary bg-elevated/70 shadow-xl"
-                  : "border-surgical bg-surface/60 hover:border-muted/50"
+                  ? "border-accent bg-elevated/70 shadow-xl"
+                  : "border-surgical bg-surface/60 hover:border-border-strong"
               )}
             >
               {tier.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <Badge variant="outline" className="bg-primary text-canvas font-bold border-none">
+                  <Badge variant="outline" className="bg-accent text-on-accent font-bold border-none whitespace-nowrap">
                     {t("mostPopular")}
                   </Badge>
                 </div>
