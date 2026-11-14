@@ -28,7 +28,7 @@ export function SpotlightCard({
       ref={divRef}
       onMouseMove={handleMouseMove}
       className={cn(
-        "group relative rounded-2xl border border-surgical bg-surface p-6 overflow-hidden transition-all duration-300 hover:border-muted/40",
+        "group relative rounded-2xl border border-surgical bg-card shadow-e1 p-6 overflow-hidden transition-all duration-200 hover:border-border-strong",
         className
       )}
       style={

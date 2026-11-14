@@ -1,3 +1,8 @@
+export interface PricingFeature {
+  text: string;
+  soon?: boolean;
+}
+
 export interface PricingTier {
   id: "free" | "starter" | "creator" | "pro" | "scale";
   name: string;
@@ -8,8 +13,8 @@ export interface PricingTier {
     en: string;
   };
   features: {
-    tr: string[];
-    en: string[];
+    tr: PricingFeature[];
+    en: PricingFeature[];
   };
   popular?: boolean;
 }
@@ -21,23 +26,23 @@ export const pricingTiers: PricingTier[] = [
     monthlyPrice: 0,
     annualPrice: 0,
     description: {
-      tr: "Bireysel geliştiriciler ve yerel SQLite denemeleri için.",
-      en: "For solo tinkerers and local SQLite experimentation.",
+      tr: "Tek proje üzerinde konsolu deneyen bağımsız geliştiriciler için.",
+      en: "For solo builders testing the console on a single project.",
     },
     features: {
       tr: [
-        "1 Aktif Veritabanı Bağlantısı",
-        "Temel GitHub CI İzleme",
-        "Yerel Şifreli SQLite Kasası",
-        "Monochrome Arayüz (Dark & Light)",
-        "Topluluk Desteği",
+        { text: "1 çalışma alanı" },
+        { text: "Vercel ve Coolify deploy takibi" },
+        { text: "GitHub Actions CI çalışmaları ve iş akışları" },
+        { text: "Loglar ve hatalar tek yerde" },
+        { text: "Stripe geliri ve gider takibi" },
       ],
       en: [
-        "1 Active Database Connection",
-        "Basic GitHub CI Telemetry",
-        "Local Encrypted SQLite Vault",
-        "Monochrome Desktop UI",
-        "Community Support",
+        { text: "1 workspace" },
+        { text: "Deploys from Vercel and Coolify" },
+        { text: "GitHub Actions runs and workflows" },
+        { text: "Logs and errors in one place" },
+        { text: "Stripe revenue and expense tracking" },
       ],
     },
   },
@@ -47,23 +52,23 @@ export const pricingTiers: PricingTier[] = [
     monthlyPrice: 6,
     annualPrice: 60,
     description: {
-      tr: "İlk mikro-SaaS ürününü yayına alanlar için.",
-      en: "For builders shipping their first micro-SaaS product.",
+      tr: "Canlı log ve doğrudan veritabanı kontrolü isteyen geliştiriciler için.",
+      en: "For builders who want live logs and direct database tooling.",
     },
     features: {
       tr: [
-        "3 Aktif PostgreSQL / SQLite Bağlantısı",
-        "Canlı Coolify Sunucu Telemetrisi",
-        "Stripe MRR & Abonelik Widget'ı",
-        "Otomatik Token Rotasyonu",
-        "E-posta ile Öncelikli Destek",
+        { text: "2 çalışma alanına kadar" },
+        { text: "Canlı WebSocket log akışı" },
+        { text: "PostgreSQL ve Supabase için SQL konsolu" },
+        { text: "Tablolar, oturumlar ve bakım araçları" },
+        { text: "Free'deki her şey" },
       ],
       en: [
-        "3 Active PostgreSQL / SQLite Connections",
-        "Live Coolify Server Telemetry",
-        "Stripe MRR & Subscriptions Widget",
-        "Automated Token Rotation",
-        "Priority Email Support",
+        { text: "Up to 2 workspaces" },
+        { text: "Live WebSocket log stream" },
+        { text: "SQL console for PostgreSQL and Supabase" },
+        { text: "Tables, sessions and maintenance tools" },
+        { text: "Everything in Free" },
       ],
     },
   },
@@ -74,25 +79,23 @@ export const pricingTiers: PricingTier[] = [
     annualPrice: 220,
     popular: true,
     description: {
-      tr: "Birden fazla SaaS yöneten aktif bağımsız girişimciler.",
-      en: "For serial indie makers running multiple income streams.",
+      tr: "Birden fazla ürün yönetip AI teşhis ve otomasyon kullanan kurucular için.",
+      en: "For serial indie founders using AI diagnostics and automation.",
     },
     features: {
       tr: [
-        "Sınırsız PostgreSQL & MySQL Bağlantısı",
-        "Gemini 2.0 SRE Asistanı (Kök Neden Analizi)",
-        "Go/No-Go Dağıtım Boru Hattı Doğrulaması",
-        "AES-256-GCM Çoklu Kasa Yönetimi",
-        "Canlı WebSocket Telemetri Akışı",
-        "Discord VIP Geliştirici Kanalı",
+        { text: "5 çalışma alanına kadar" },
+        { text: "Gemini ile AI kök neden analizi (RCA)" },
+        { text: "Araçlarınız arasında Otopilot kuralları" },
+        { text: "Kapılı sürüm (Go/No-Go) pipeline'ı" },
+        { text: "Starter'daki her şey" },
       ],
       en: [
-        "Unlimited PostgreSQL & MySQL Connections",
-        "Gemini 2.0 SRE Assistant (Root Cause)",
-        "Go/No-Go Release Pipeline Verification",
-        "AES-256-GCM Multi-Vault Management",
-        "Real-Time WebSocket Telemetry Streams",
-        "Discord VIP Developer Channel",
+        { text: "Up to 5 workspaces" },
+        { text: "AI root cause analysis with Gemini" },
+        { text: "Autopilot rules across your tools" },
+        { text: "Release pipeline with Go/No-Go gates" },
+        { text: "Everything in Starter" },
       ],
     },
   },
@@ -102,23 +105,25 @@ export const pricingTiers: PricingTier[] = [
     monthlyPrice: 99,
     annualPrice: 990,
     description: {
-      tr: "Büyüyen ve sıfır kesinti hedefleyen ekipler.",
-      en: "For scaling micro-teams needing zero downtime safety.",
+      tr: "Kendi Gemini anahtarını, Gateway API'yi ve Storage tarayıcısını kullanan ekipler.",
+      en: "For builders bringing their own Gemini key, Gateway API & Storage.",
     },
     features: {
       tr: [
-        "5 Eşzamanlı Takım Üyesi Koltuğu",
-        "Çoklu Coolify & Kubernetes Küme Desteği",
-        "Özel Webhook & HMAC Olay Yönlendirme",
-        "Otomatik Veritabanı İndeks Önerileri",
-        "15 Dakikalık Acil Destek SLA",
+        { text: "15 çalışma alanına kadar" },
+        { text: "Kendi Gemini anahtarınız (BYOK — kredi harcamaz)" },
+        { text: "Nexus Gateway API anahtarları (/v1/logs)" },
+        { text: "Supabase Storage kova tarayıcısı" },
+        { text: "Giden webhook teslimatı", soon: true },
+        { text: "Creator'daki her şey" },
       ],
       en: [
-        "5 Concurrent Team Seats",
-        "Multi-Coolify & Kubernetes Cluster Support",
-        "Custom Webhook & HMAC Event Routing",
-        "Automated DB Index Optimization",
-        "15-Minute Emergency SLA",
+        { text: "Up to 15 workspaces" },
+        { text: "Your own Gemini key (BYOK — uses no credits)" },
+        { text: "API keys for the Nexus gateway (/v1/logs)" },
+        { text: "Supabase Storage bucket browser" },
+        { text: "Outbound webhook delivery", soon: true },
+        { text: "Everything in Creator" },
       ],
     },
   },
@@ -128,23 +133,23 @@ export const pricingTiers: PricingTier[] = [
     monthlyPrice: 299,
     annualPrice: 2990,
     description: {
-      tr: "Kritik gelir üreten yüksek trafikli sistemler.",
-      en: "For high-throughput systems with dedicated telemetry needs.",
+      tr: "Sınırsız çalışma alanı ve öncelikli destek isteyen yüksek hacimli yapılar.",
+      en: "For high-volume setups needing unlimited workspaces and direct support.",
     },
     features: {
       tr: [
-        "Sınırsız Takım Koltuğu & Cihaz Eşleme",
-        "Özel On-Premises Go BFF Barındırma",
-        "Kurumsal Denetim Günlüğü (Audit Trails)",
-        "Özel Stripe & Banka Entegrasyonları",
-        "Doğrudan Kurucu Mühendis Desteği",
+        { text: "Sınırsız çalışma alanı" },
+        { text: "Takım koltukları ve RBAC", soon: true },
+        { text: "Gateway kota ve istek telemetrisi", soon: true },
+        { text: "Öncelikli kurucu mühendis desteği" },
+        { text: "Pro'daki her şey" },
       ],
       en: [
-        "Unlimited Team Seats & Device Sync",
-        "Custom On-Premises Go BFF Hosting",
-        "Enterprise Audit Trails & SOC2 Logging",
-        "Bespoke Payment Gateway Connectors",
-        "Direct Dedicated Founder Support",
+        { text: "Unlimited workspaces" },
+        { text: "Team seats and RBAC", soon: true },
+        { text: "Gateway quota & request telemetry", soon: true },
+        { text: "Priority founder engineering support" },
+        { text: "Everything in Pro" },
       ],
     },
   },

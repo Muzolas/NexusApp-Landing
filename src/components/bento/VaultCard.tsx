@@ -19,16 +19,19 @@ export function VaultCard() {
     <SpotlightCard className="col-span-1 flex flex-col justify-between">
       <div>
         <div className="flex items-center justify-between mb-4">
-          <div className="w-10 h-10 rounded-xl border border-surgical bg-elevated flex items-center justify-center">
-            <Shield className="w-5 h-5 text-primary" />
+          <div className="w-10 h-10 rounded-xl border border-surgical bg-surface flex items-center justify-center">
+            <Shield className="w-5 h-5 text-accent" />
           </div>
-          <Badge variant="live">AES-256-GCM</Badge>
+          <div className="flex items-center gap-1.5">
+            <Badge variant="outline">SSRF Guard</Badge>
+            <Badge variant="live">AES-256-GCM</Badge>
+          </div>
         </div>
 
-        <h3 className="font-mono text-lg font-bold text-primary tracking-tight">
+        <h3 className="font-sans text-lg font-semibold text-primary tracking-tight">
           {t("vaultTitle")}
         </h3>
-        <p className="mt-2 text-xs sm:text-sm text-muted leading-relaxed font-sans">
+        <p className="mt-2 text-xs sm:text-sm text-secondary leading-relaxed font-sans">
           {t("vaultDesc")}
         </p>
       </div>

@@ -51,7 +51,7 @@ export function WaitlistCta() {
 
   return (
     <section id="waitlist" className="py-24 sm:py-32 border-t border-surgical relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div className="rounded-3xl border border-surgical bg-surface/80 p-8 sm:p-14 backdrop-blur-md relative overflow-hidden">
+      <div className="rounded-3xl border border-surgical bg-card shadow-e2 p-8 sm:p-14 relative overflow-hidden">
         {/* Subtle radial background glow */}
         <div className="absolute inset-0 bg-tech-grid opacity-30 pointer-events-none" />
 
@@ -59,10 +59,10 @@ export function WaitlistCta() {
           <Badge variant="live" className="mb-4">
             {t("badge")}
           </Badge>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-mono font-bold tracking-tight text-primary">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-semibold tracking-tight text-primary">
             {t("title")}
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-muted font-sans leading-relaxed">
+          <p className="mt-4 text-sm sm:text-base text-secondary font-sans leading-relaxed">
             {t("subtitle")}
           </p>
 

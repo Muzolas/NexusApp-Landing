@@ -2,7 +2,6 @@ import { setRequestLocale } from "next-intl/server";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { TelemetryBar } from "@/components/sections/TelemetryBar";
 import { BentoGrid } from "@/components/sections/BentoGrid";
-import { DemoVideo } from "@/components/sections/DemoVideo";
 import { InteractiveTerminal } from "@/components/sections/InteractiveTerminal";
 import { RoadmapSection } from "@/components/sections/RoadmapSection";
 import { PricingSection } from "@/components/sections/PricingSection";
@@ -23,7 +22,6 @@ export default async function HomePage({
       <HeroSection />
       <TelemetryBar />
       <BentoGrid />
-      <DemoVideo />
       <InteractiveTerminal />
       <RoadmapSection />
       <PricingSection />

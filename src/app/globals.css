@@ -4,6 +4,7 @@
   /* Palette source: ../NexusApp/design/brand-palette.json (Nexus Mulberry) */
   :root {
     --canvas: #f0eee9;
+    --sidebar: #e7e3dd;
     --card: #ffffff;
     --surface: #e9e5df;
     --elevated: #e3ded7;
@@ -14,15 +15,19 @@
     --muted: #655860;
     --accent: #5b2a4e;
     --on-accent: #ffffff;
+    --accent-2: #9a7108;
     --live: #1b7d52;
     --status-warn: #8f6200;
     --status-error: #c2410c;
     --status-info: #2e62c0;
-    --shadow-e3: 0 24px 56px -12px rgba(20, 20, 15, 0.24);
+    --shadow-e1: 0 1px 2px rgba(20, 20, 15, 0.05), 0 2px 8px -2px rgba(20, 20, 15, 0.06);
+    --shadow-e2: 0 6px 20px -6px rgba(20, 20, 15, 0.16), 0 2px 4px rgba(20, 20, 15, 0.05);
+    --shadow-e3: 0 24px 48px -16px rgba(20, 20, 15, 0.24);
   }
 
   .dark {
     --canvas: #120d11;
+    --sidebar: #0e0a0d;
     --card: #1b1419;
     --surface: #241b21;
     --elevated: #2b2128;
@@ -33,16 +38,20 @@
     --muted: #9a8c95;
     --accent: #d4a0c8;
     --on-accent: #2a1424;
+    --accent-2: #f3d98b;
     --live: #4cc38a;
     --status-warn: #e8b64a;
     --status-error: #f2704f;
     --status-info: #8fa8f0;
+    --shadow-e1: inset 0 1px 0 0 rgba(255, 255, 255, 0.035);
+    --shadow-e2: 0 8px 24px -8px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.035);
     --shadow-e3: 0 24px 56px -12px rgba(0, 0, 0, 0.75);
   }
 }
 
 @theme inline {
   --color-canvas: var(--canvas);
+  --color-sidebar: var(--sidebar);
   --color-card: var(--card);
   --color-surface: var(--surface);
   --color-elevated: var(--elevated);
@@ -53,10 +62,13 @@
   --color-muted: var(--muted);
   --color-accent: var(--accent);
   --color-on-accent: var(--on-accent);
+  --color-accent-2: var(--accent-2);
   --color-live: var(--live);
   --color-status-error: var(--status-error);
   --color-status-warn: var(--status-warn);
   --color-status-info: var(--status-info);
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-mono), monospace;
 }
 
 body {
@@ -66,8 +78,20 @@ body {
   overflow-x: hidden;
 }
 
+.shadow-e1 {
+  box-shadow: var(--shadow-e1);
+}
+
+.shadow-e2 {
+  box-shadow: var(--shadow-e2);
+}
+
 .shadow-e3 {
   box-shadow: var(--shadow-e3);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
 }
 
 /* Technical 32px grid pattern with smooth radial fade */

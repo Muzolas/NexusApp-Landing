@@ -23,13 +23,13 @@ export function PricingSection() {
   return (
     <section id="pricing" className="py-24 sm:py-32 border-t border-surgical relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <Badge variant="outline" className="mb-4">
+        <Badge variant="accent" className="mb-4">
           {t("badge")}
         </Badge>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-mono font-bold tracking-tight text-primary">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-semibold tracking-tight text-primary">
           {t("title")}
         </h2>
-        <p className="mt-4 text-sm sm:text-base text-muted font-sans max-w-xl mx-auto">
+        <p className="mt-4 text-sm sm:text-base text-secondary font-sans max-w-xl mx-auto">
           {t("subtitle")}
         </p>
 
@@ -39,9 +39,9 @@ export function PricingSection() {
             type="button"
             onClick={() => setIsAnnual(false)}
             className={cn(
-              "px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium transition-colors cursor-pointer",
+              "px-3.5 py-1.5 rounded-lg text-xs font-sans font-medium transition-colors cursor-pointer",
               !isAnnual
-                ? "bg-elevated text-primary font-semibold shadow-sm"
+                ? "bg-card text-primary font-semibold shadow-e1"
                 : "text-muted hover:text-primary"
             )}
           >
@@ -51,14 +51,14 @@ export function PricingSection() {
             type="button"
             onClick={() => setIsAnnual(true)}
             className={cn(
-              "flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium transition-colors cursor-pointer",
+              "flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-sans font-medium transition-colors cursor-pointer",
               isAnnual
-                ? "bg-elevated text-primary font-semibold shadow-sm"
+                ? "bg-card text-primary font-semibold shadow-e1"
                 : "text-muted hover:text-primary"
             )}
           >
             <span>{t("annual")}</span>
-            <Badge variant="live" className="text-[9px] py-0 px-1.5">
+            <Badge variant="live" className="text-[10px] py-0 px-1.5">
               {t("annualDiscount")}
             </Badge>
           </button>
@@ -75,38 +75,50 @@ export function PricingSection() {
             <div
               key={tier.id}
               className={cn(
-                "rounded-2xl border p-5 flex flex-col justify-between transition-all duration-300 relative",
+                "rounded-2xl border p-5 flex flex-col justify-between transition-all duration-200 relative bg-card",
                 tier.popular
-                  ? "border-accent bg-elevated/70 shadow-xl"
-                  : "border-surgical bg-surface/60 hover:border-border-strong"
+                  ? "border-accent shadow-e2"
+                  : "border-surgical shadow-e1 hover:border-border-strong"
               )}
             >
               {tier.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <Badge variant="outline" className="bg-accent text-on-accent font-bold border-none whitespace-nowrap">
+                  <Badge variant="outline" className="bg-accent text-on-accent font-semibold border-none whitespace-nowrap">
                     {t("mostPopular")}
                   </Badge>
                 </div>
               )}
 
               <div>
-                <div className="font-mono text-base font-bold text-primary">
+                <div className="font-sans text-base font-semibold text-primary">
                   {tier.name}
                 </div>
-                <p className="mt-2 text-xs text-muted font-sans min-h-[32px]">
+                <p className="mt-2 text-xs text-secondary font-sans min-h-[36px]">
                   {tier.description[locale]}
                 </p>
 
-                <div className="mt-6 flex items-baseline gap-1 font-mono">
+                <div className="mt-6 flex items-baseline gap-1 font-mono tabular-nums">
                   <span className="text-3xl font-bold text-primary">${price}</span>
                   <span className="text-xs text-muted">{periodLabel}</span>
                 </div>
 
                 <div className="mt-6 space-y-2.5 pt-6 border-t border-surgical/60">
                   {tier.features[locale].map((feat, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs text-muted font-mono">
-                      <Check className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
-                      <span>{feat}</span>
+                    <div key={idx} className="flex items-start gap-2 text-xs text-secondary font-sans">
+                      <Check
+                        className={cn(
+                          "w-3.5 h-3.5 shrink-0 mt-0.5",
+                          feat.soon ? "text-accent-2" : "text-accent"
+                        )}
+                      />
+                      <div className="flex flex-wrap items-center gap-1.5 leading-snug">
+                        <span>{feat.text}</span>
+                        {feat.soon && (
+                          <span className="inline-flex items-center px-1.5 py-0.2 rounded text-[10px] font-medium border border-accent-2/35 bg-accent-2/12 text-accent-2">
+                            {t("soonTag")}
+                          </span>
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>

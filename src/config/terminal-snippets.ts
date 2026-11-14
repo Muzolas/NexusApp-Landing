@@ -9,72 +9,68 @@ export const terminalSnippets: CodeSnippet[] = [
   {
     id: "ts",
     language: "typescript",
-    filename: "nexus.client.ts",
-    code: `import { NexusClient } from "@nexusapp/sdk";
-
-// Initialize client with local BFF bridge
-const nexus = new NexusClient({
-  baseUrl: "http://localhost:3000",
-  apiKey: process.env.NEXUS_VAULT_KEY,
-});
-
-// Stream live CI/CD pipeline and deployments
-const stream = await nexus.telemetry.subscribe({
-  events: ["deployment.status", "db.connection_pool"],
-  onMessage: (event) => {
-    console.log(\`[\${event.timestamp}] \${event.type}: \${event.status}\`);
-    if (event.type === "db.connection_pool" && event.utilization > 0.85) {
-      console.warn("⚠️ Pool nearing capacity, dispatching SRE remediation.");
-    }
+    filename: "ingest-log.ts",
+    code: `// Ingest an application log into NexusApp via Gateway API (/v1/logs)
+await fetch("https://api.nexus.beishang.dev/v1/logs", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Authorization": \`Bearer \${process.env.NEXUS_API_KEY}\`,
   },
+  body: JSON.stringify({
+    level: "ERROR",
+    service: "checkout-worker",
+    message: "Stripe webhook signature mismatch",
+    metadata: { attempt: 2, region: "eu-central" },
+  }),
 });`,
   },
   {
     id: "curl",
     language: "bash",
-    filename: "health_check.sh",
-    code: `# Check BFF service health and pgxpool diagnostics
-curl -s -X GET "http://localhost:3000/health" \\
-  -H "Authorization: Bearer $NEXUS_API_KEY" \\
-  -H "Accept: application/json" | jq .
+    filename: "ingest.sh",
+    code: `# Check Gateway health with your nx_live_ API key
+curl -s "https://api.nexus.beishang.dev/v1/health" \\
+  -H "Authorization: Bearer $NEXUS_API_KEY"
 
-# Trigger release pipeline Go/No-Go evaluation
-curl -s -X POST "http://localhost:3000/api/pipeline/eval" \\
+# Send a structured error log to Logs & Errors
+curl -s -X POST "https://api.nexus.beishang.dev/v1/logs" \\
   -H "Authorization: Bearer $NEXUS_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
-    "repository": "Muzolas/NexusApp",
-    "commit_sha": "HEAD",
-    "require_clean_ci": true
+    "level": "ERROR",
+    "service": "api-gateway",
+    "message": "upstream timeout after 5000ms",
+    "metadata": { "route": "/checkout", "status": 504 }
   }'`,
   },
   {
     id: "go",
     language: "go",
-    filename: "main.go",
+    filename: "logger.go",
     code: `package main
 
 import (
-	"context"
-	"fmt"
-	"log"
-	"github.com/nexusapp/go-client/nexus"
+	"bytes"
+	"net/http"
+	"os"
 )
 
-func main() {
-	client := nexus.NewClient("http://localhost:3000", nexus.WithEnvKey())
-
-	ctx := context.Background()
-	telemetry, err := client.Telemetry.GetStatus(ctx)
+func sendNexusLog() error {
+	payload := []byte(\`{"level":"ERROR","service":"worker","message":"pgxpool acquire timeout"}\`)
+	req, err := http.NewRequest(http.MethodPost, "https://api.nexus.beishang.dev/v1/logs", bytes.NewReader(payload))
 	if err != nil {
-		log.Fatalf("telemetry fetch failed: %v", err)
+		return err
 	}
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("Authorization", "Bearer "+os.Getenv("NEXUS_API_KEY"))
 
-	fmt.Printf("BFF Uptime: %s | Active DB Pool: %d/%d\\n",
-		telemetry.Uptime,
-		telemetry.PoolInUse,
-		telemetry.PoolMaxConns,
-	)
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+	return nil
 }`,
   },
 ];

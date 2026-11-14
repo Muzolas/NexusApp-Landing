@@ -13,16 +13,16 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={cn(
-          "inline-flex items-center justify-center font-mono font-medium transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:pointer-events-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40",
+          "inline-flex items-center justify-center font-sans font-medium transition-all duration-150 cursor-pointer disabled:opacity-50 disabled:pointer-events-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40",
           {
             // Primary: Brand accent fill with contrast-safe on-accent ink
-            "bg-accent text-on-accent hover:opacity-90 active:scale-[0.98] shadow-sm":
+            "bg-accent text-on-accent hover:opacity-90 active:scale-[0.97] shadow-e1":
               variant === "primary",
-            // Outline: 1px crisp surgical border with subtle hover highlight
-            "border border-surgical bg-card/80 text-primary hover:bg-elevated hover:border-border-strong active:scale-[0.98]":
+            // Outline: 1px border-strong on card surface
+            "border border-border-strong bg-card text-primary hover:bg-surface active:scale-[0.97]":
               variant === "outline",
             // Ghost: completely flat
-            "text-muted hover:text-primary hover:bg-elevated/80":
+            "text-secondary hover:text-primary hover:bg-surface":
               variant === "ghost",
           },
           {

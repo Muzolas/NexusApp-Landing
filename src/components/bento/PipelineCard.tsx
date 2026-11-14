@@ -11,27 +11,27 @@ export function PipelineCard() {
   const t = useTranslations("Bento");
 
   const steps = [
-    { label: t("pipelinePush"), status: "PASS", commit: "feat: bff" },
-    { label: t("pipelineCi"), status: "PASS", commit: "0 warnings" },
-    { label: t("pipelineDeploy"), status: "PASS", commit: "Coolify v4" },
-    { label: t("pipelineRelease"), status: "PASS", commit: "Go/No-Go" },
-    { label: t("pipelineAnnounce"), status: "READY", commit: "v1.0-beta" },
+    { label: t("pipelinePush"), status: "PASS", commit: "main · a41f9c2" },
+    { label: t("pipelineCi"), status: "PASS", commit: "GitHub Actions" },
+    { label: t("pipelineDeploy"), status: "PASS", commit: "Vercel · Coolify" },
+    { label: t("pipelineRelease"), status: "PASS", commit: "Go / No-Go" },
+    { label: t("pipelineAnnounce"), status: "ACTIVE", commit: "Autopilot rule" },
   ];
 
   return (
     <SpotlightCard className="col-span-1 md:col-span-2 flex flex-col justify-between">
       <div>
         <div className="flex items-center justify-between mb-4">
-          <div className="w-10 h-10 rounded-xl border border-surgical bg-elevated flex items-center justify-center">
-            <GitCommit className="w-5 h-5 text-primary" />
+          <div className="w-10 h-10 rounded-xl border border-surgical bg-surface flex items-center justify-center">
+            <GitCommit className="w-5 h-5 text-accent" />
           </div>
-          <Badge variant="outline">GO / NO-GO ENGINE</Badge>
+          <Badge variant="accent">Workflows &amp; Release Gates</Badge>
         </div>
 
-        <h3 className="font-mono text-lg font-bold text-primary tracking-tight">
+        <h3 className="font-sans text-lg font-semibold text-primary tracking-tight">
           {t("pipelineTitle")}
         </h3>
-        <p className="mt-2 text-xs sm:text-sm text-muted leading-relaxed font-sans max-w-xl">
+        <p className="mt-2 text-xs sm:text-sm text-secondary leading-relaxed font-sans max-w-xl">
           {t("pipelineDesc")}
         </p>
       </div>

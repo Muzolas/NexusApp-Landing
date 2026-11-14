@@ -17,13 +17,13 @@ export function RoadmapSection() {
   return (
     <section id="roadmap" className="py-24 sm:py-32 border-t border-surgical relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <Badge variant="outline" className="mb-4">
+        <Badge variant="accent" className="mb-4">
           {t("badge")}
         </Badge>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-mono font-bold tracking-tight text-primary">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-semibold tracking-tight text-primary">
           {t("title")}
         </h2>
-        <p className="mt-4 text-sm sm:text-base text-muted font-sans max-w-xl mx-auto">
+        <p className="mt-4 text-sm sm:text-base text-secondary font-sans max-w-xl mx-auto">
           {t("subtitle")}
         </p>
       </div>
@@ -32,14 +32,14 @@ export function RoadmapSection() {
         {categories.map((cat) => (
           <div
             key={cat.key}
-            className="rounded-2xl border border-surgical bg-surface/50 p-6 flex flex-col justify-between"
+            className="rounded-2xl border border-surgical bg-card shadow-e1 p-6 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center justify-between pb-4 border-b border-surgical/60 mb-6">
-                <span className="font-mono text-sm font-bold text-primary tracking-wide">
+                <span className="font-sans text-sm font-semibold text-primary">
                   {cat.label}
                 </span>
-                <span className="font-mono text-xs text-muted">
+                <span className="font-mono text-xs text-muted tabular-nums">
                   {locale === "tr"
                     ? `${cat.items.length} Modül`
                     : `${cat.items.length} ${cat.items.length === 1 ? "Module" : "Modules"}`}
@@ -47,40 +47,61 @@ export function RoadmapSection() {
               </div>
 
               <div className="space-y-4">
-                {cat.items.map((item) => (
-                  <div
-                    key={item.id}
-                    className="p-4 rounded-xl border border-surgical bg-surface space-y-3"
-                  >
-                    <div className="flex items-center justify-between">
-                      <Badge variant={item.status === "in-progress" ? "warn" : "default"}>
-                        {item.tag}
-                      </Badge>
-                      <div className="flex items-center gap-1.5 font-mono text-[11px] text-muted">
-                        <StatusLed
-                          status={item.status === "in-progress" ? "live" : "offline"}
-                          pulse={item.status === "in-progress"}
+                {cat.items.map((item) => {
+                  const badgeVariant =
+                    item.status === "shipped"
+                      ? "live"
+                      : item.status === "coming-soon"
+                        ? "soon"
+                        : "default";
+
+                  return (
+                    <div
+                      key={item.id}
+                      className="p-4 rounded-xl border border-surgical bg-surface/60 space-y-3"
+                    >
+                      <div className="flex items-center justify-between gap-2">
+                        <Badge variant={badgeVariant}>
+                          {item.tag[locale]}
+                        </Badge>
+                        <div className="flex items-center gap-1.5 font-mono text-[11px] text-muted tabular-nums">
+                          <StatusLed
+                            status={
+                              item.status === "shipped"
+                                ? "live"
+                                : item.status === "coming-soon"
+                                  ? "warn"
+                                  : "offline"
+                            }
+                            pulse={item.status === "coming-soon"}
+                          />
+                          <span>{item.progress}%</span>
+                        </div>
+                      </div>
+
+                      <h4 className="font-sans text-sm font-semibold text-primary">
+                        {item.title[locale]}
+                      </h4>
+                      <p className="text-xs text-secondary font-sans leading-relaxed">
+                        {item.description[locale]}
+                      </p>
+
+                      {/* Progress Bar */}
+                      <div className="w-full h-1 rounded-full bg-elevated overflow-hidden">
+                        <div
+                          className={
+                            item.status === "shipped"
+                              ? "h-full bg-live transition-all duration-500"
+                              : item.status === "coming-soon"
+                                ? "h-full bg-accent-2 transition-all duration-500"
+                                : "h-full bg-accent transition-all duration-500"
+                          }
+                          style={{ width: `${item.progress}%` }}
                         />
-                        <span>{item.progress}%</span>
                       </div>
                     </div>
-
-                    <h4 className="font-mono text-sm font-bold text-primary">
-                      {item.title[locale]}
-                    </h4>
-                    <p className="text-xs text-muted font-sans leading-relaxed">
-                      {item.description[locale]}
-                    </p>
-
-                    {/* Progress Bar */}
-                    <div className="w-full h-1 rounded-full bg-elevated overflow-hidden">
-                      <div
-                        className="h-full bg-accent transition-all duration-500"
-                        style={{ width: `${item.progress}%` }}
-                      />
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>

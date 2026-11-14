@@ -1,9 +1,10 @@
 export const siteConfig = {
   name: "NexusApp",
-  description: "High-Performance Desktop Control Center for Indie Developers. Unify CI/CD, Coolify, Stripe & PostgreSQL telemetry in a pure monochrome cockpit.",
+  description:
+    "Web control console for indie developers. Monitor Vercel and Coolify deployments, GitHub Actions CI, Stripe revenue, expenses, logs, PostgreSQL/Supabase and Autopilot rules in one quiet workspace.",
   url: "https://nexus.beishang.dev",
   released: false, // Pre-launch flag
-  earlyAccessLabel: "EARLY ACCESS · IN DEVELOPMENT",
+  earlyAccessLabel: "Early access · Invite-only preview",
   links: {
     github: "https://github.com/Muzolas/NexusApp",
     twitter: "https://x.com/beishangdev",

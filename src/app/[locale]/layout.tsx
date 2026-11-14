@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -9,8 +9,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import "@/app/globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const interSans = Inter({
+  variable: "--font-inter",
   subsets: ["latin", "latin-ext"],
   display: "swap",
 });
@@ -22,25 +22,27 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NexusApp — Indie Desktop Control Center",
+  title: "NexusApp — Control Console for Indie Developers",
   description:
-    "High-Performance Desktop Control Center for Indie Developers. Unify GitHub CI/CD, Coolify deployments, Stripe telemetry, and PostgreSQL in a pure monochrome cockpit.",
+    "Web control console for indie developers. Monitor Vercel and Coolify deployments, GitHub Actions CI, Stripe revenue, expenses, logs, PostgreSQL/Supabase and Autopilot rules in one quiet workspace.",
   metadataBase: new URL("https://nexus.beishang.dev"),
   keywords: [
     "NexusApp",
-    "Indie Control Center",
-    "Flutter Desktop",
+    "Indie Control Console",
+    "Web Control Center",
     "Go Fiber BFF",
-    "Developer Dashboard",
+    "Developer Console",
     "PostgreSQL Telemetry",
+    "Supabase",
     "Coolify",
+    "Vercel",
     "Stripe MRR",
   ],
   authors: [{ name: "beishang.dev" }],
   openGraph: {
-    title: "NexusApp — Indie Desktop Control Center",
+    title: "NexusApp — Control Console for Indie Developers",
     description:
-      "High-Performance Desktop Control Center for Indie Developers. Unify CI/CD, Coolify, Stripe & PostgreSQL telemetry in a pure monochrome cockpit.",
+      "Web control console for indie developers. Monitor Vercel and Coolify deployments, GitHub Actions CI, Stripe revenue, expenses, logs, PostgreSQL/Supabase and Autopilot rules in one quiet workspace.",
     url: "https://nexus.beishang.dev",
     siteName: "NexusApp",
     images: [
@@ -56,9 +58,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "NexusApp — Indie Desktop Control Center",
+    title: "NexusApp — Control Console for Indie Developers",
     description:
-      "High-Performance Desktop Control Center for Indie Developers.",
+      "Web control console for indie developers. Monitor deploys, CI, Stripe revenue, expenses, logs, PostgreSQL/Supabase and Autopilot in one place.",
     images: ["/og-image.png"],
   },
 };
@@ -86,7 +88,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${jetbrainsMono.variable} antialiased bg-canvas text-primary min-h-screen flex flex-col font-sans`}
+        className={`${interSans.variable} ${jetbrainsMono.variable} antialiased bg-canvas text-primary min-h-screen flex flex-col font-sans`}
       >
         <ThemeProvider>
           <NextIntlClientProvider messages={messages}>

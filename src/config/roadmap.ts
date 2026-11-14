@@ -1,7 +1,10 @@
 export interface RoadmapItem {
   id: string;
   category: "now" | "next" | "later";
-  tag: string;
+  tag: {
+    tr: string;
+    en: string;
+  };
   title: {
     tr: string;
     en: string;
@@ -11,83 +14,152 @@ export interface RoadmapItem {
     en: string;
   };
   progress: number; // percentage
-  status: "in-progress" | "planned" | "future";
+  status: "shipped" | "coming-soon" | "later";
 }
 
 export const roadmapItems: RoadmapItem[] = [
   {
-    id: "bff-pgxpool",
+    id: "core-8-modules",
     category: "now",
-    tag: "BACKEND P0",
+    tag: {
+      tr: "ÇEKİRDEK · 8 MODÜL",
+      en: "CORE CONSOLE · 8 MODULES",
+    },
     title: {
-      tr: "Go Fiber v2 BFF & PostgreSQL pgxpool Entegrasyonu",
-      en: "Go Fiber v2 BFF & PostgreSQL pgxpool Integration",
+      tr: "8 Çekirdek Modül & Nexus Mulberry Arayüzü",
+      en: "8 Core Modules & Nexus Mulberry UI",
     },
     description: {
-      tr: "Port 3000 üzerinde çalışan bağımsız backend mimarisi ve AES-256 Vault anahtar koruması.",
-      en: "Independent backend running on port 3000 with AES-256 Vault key encryption.",
+      tr: "Pilot brifingi, Vercel ve Coolify Deployments, GitHub Actions Workflows, Stripe Revenue, Expenses, Logs & Errors, Postgres/Supabase Database & Storage ve Autopilot.",
+      en: "Pilot briefing, Vercel & Coolify Deployments, GitHub Actions Workflows, Stripe Revenue, Expenses, Logs & Errors, Postgres/Supabase Database & Storage, and Autopilot.",
     },
-    progress: 95,
-    status: "in-progress",
+    progress: 100,
+    status: "shipped",
   },
   {
-    id: "flutter-desktop",
+    id: "bff-vault-ssrf",
     category: "now",
-    tag: "DESKTOP CLIENT",
+    tag: {
+      tr: "GÜVENLİK & BFF",
+      en: "SECURITY & BFF",
+    },
     title: {
-      tr: "Monochrome Technical Masaüstü Kullanıcı Arayüzü",
-      en: "Monochrome Technical Desktop Client UI",
+      tr: "Go Fiber BFF, AES-256-GCM Kasa & SSRF Koruması",
+      en: "Go Fiber BFF, AES-256-GCM Vault & SSRF Guard",
     },
     description: {
-      tr: "Riverpod state yönetimi, katmanlı mimari, pencereli ve tam ekran masaüstü deneyimi.",
-      en: "Riverpod state management, layered architecture, desktop-native windowing.",
+      tr: "Argon2id kimlik doğrulama, çalışma alanı bazlı şifreli anahtar kasası, güvenli dış çağrılar (netutil) ve /v1/logs Gateway API.",
+      en: "Argon2id authentication, per-workspace encrypted secrets vault, SSRF-hardened outbound requests, and /v1/logs Gateway API.",
     },
-    progress: 85,
-    status: "in-progress",
+    progress: 100,
+    status: "shipped",
   },
   {
-    id: "coolify-connector",
+    id: "gemini-sre-byok",
+    category: "now",
+    tag: {
+      tr: "AI & SQL KONSOLU",
+      en: "AI & SQL CONSOLE",
+    },
+    title: {
+      tr: "Gemini Kök Neden Analizi (RCA), SQL Asistanı & BYOK",
+      en: "Gemini Root-Cause Analysis, SQL Assistant & BYOK",
+    },
+    description: {
+      tr: "Loglar, veritabanı oturumları ve Pilot brifingi için tek tıkla AI teşhisi; yönetimli kredi veya kendi Gemini API anahtarınızla kullanım.",
+      en: "One-click AI diagnostics across logs, DB sessions and Pilot briefings, with managed credits or your own Gemini API key (BYOK).",
+    },
+    progress: 100,
+    status: "shipped",
+  },
+  {
+    id: "outbound-webhooks",
     category: "next",
-    tag: "INTEGRATION",
+    tag: {
+      tr: "YAKINDA · WEBHOOKS",
+      en: "COMING SOON · WEBHOOKS",
+    },
     title: {
-      tr: "Coolify Canlı Dağıtım & Konteyner Durum İzleme",
-      en: "Coolify Live Deployment & Container State Stream",
+      tr: "Giden Webhook Teslimatı & Olay Yönlendirme",
+      en: "Outbound Webhook Delivery & Event Routing",
     },
     description: {
-      tr: "Sunucu bellek, CPU ve Docker konteyner yeniden başlatma olaylarının canlı telemetrisi.",
-      en: "Real-time telemetry for server memory, CPU spikes, and Docker restarts.",
+      tr: "Autopilot kuralları ve sistem uyarılarını HMAC-SHA256 imzalı olarak Slack, Discord veya kendi HTTP uçlarınıza teslim etme.",
+      en: "Deliver Autopilot triggers and system alerts to Slack, Discord, or custom HTTP endpoints with HMAC-SHA256 signatures.",
+    },
+    progress: 65,
+    status: "coming-soon",
+  },
+  {
+    id: "gateway-quotas",
+    category: "next",
+    tag: {
+      tr: "YAKINDA · TELEMETRİ",
+      en: "COMING SOON · TELEMETRY",
+    },
+    title: {
+      tr: "Gateway Kota, Hız Sınırı & İstek Ölçümü",
+      en: "Gateway Quota, Rate-Limit & Request Metering",
+    },
+    description: {
+      tr: "/v1 API anahtarları için canlı istek hacmi, gecikme dağılımı ve çalışma alanı bazlı kota uyarıları.",
+      en: "Live request counters, latency breakdown, and per-workspace quota visibility for /v1 Gateway API keys.",
+    },
+    progress: 50,
+    status: "coming-soon",
+  },
+  {
+    id: "product-growth-modules",
+    category: "next",
+    tag: {
+      tr: "YAKINDA · ÜRÜN",
+      en: "COMING SOON · PRODUCT",
+    },
+    title: {
+      tr: "Changelog, Waitlist, Geri Bildirim & Duyuru Modülleri",
+      en: "Changelog, Waitlist, Feedback & Broadcast Modules",
+    },
+    description: {
+      tr: "Sürüm notlarını yayınlama, bekleme listesi ve kullanıcı geri bildirimlerini gerçek veri kaynaklarıyla konsola açma.",
+      en: "Unlock release changelogs, customer waitlist, feedback reviews, and broadcast announcements wired to real data.",
     },
     progress: 40,
-    status: "planned",
+    status: "coming-soon",
   },
   {
-    id: "sre-assistant",
-    category: "next",
-    tag: "AI & TELEMETRY",
-    title: {
-      tr: "Gemini 2.0 SRE Asistanı ve Kök Neden Analizi",
-      en: "Gemini 2.0 SRE Assistant & Root-Cause Remediation",
-    },
-    description: {
-      tr: "Veritabanı kilitleri, yavaş sorgular ve 500 hatalarında anında otomatik onarım komutları.",
-      en: "Instant automated repair commands when database deadlocks and 500 errors occur.",
-    },
-    progress: 25,
-    status: "planned",
-  },
-  {
-    id: "multi-team-vault",
+    id: "team-rbac",
     category: "later",
-    tag: "COLLABORATION",
+    tag: {
+      tr: "PLANLANAN · TAKIMLAR",
+      en: "PLANNED · TEAMS",
+    },
     title: {
-      tr: "Çoklu Geliştirici Kasası ve Rol Tabanlı Erişim",
-      en: "Multi-Maker Vault & Role-Based Access Control",
+      tr: "Takım Çalışma Alanları & Rol Tabanlı Erişim (RBAC)",
+      en: "Team Workspaces & Role-Based Access Control",
     },
     description: {
-      tr: "Takım üyeleri arasında şifreli ortam değişkenleri ve API token güvenli senkronizasyonu.",
-      en: "Encrypted environment variables and API token sync across distributed teams.",
+      tr: "Çoklu ekip üyesi davetleri, çalışma alanı rolleri ve denetim kayıtları.",
+      en: "Multi-member workspace invites, role-based access control, and team audit trails.",
     },
-    progress: 0,
-    status: "future",
+    progress: 15,
+    status: "later",
+  },
+  {
+    id: "extra-connectors",
+    category: "later",
+    tag: {
+      tr: "PLANLANAN · BAĞLAYICILAR",
+      en: "PLANNED · CONNECTORS",
+    },
+    title: {
+      tr: "Ek Veritabanı & Altyapı Bağlayıcıları",
+      en: "Additional Database & Infra Connectors",
+    },
+    description: {
+      tr: "MySQL, MongoDB, Firebase ve çoklu sunucu kümesi entegrasyon adaptörleri.",
+      en: "First-class connectors for MySQL, MongoDB, Firebase, and multi-cluster server targets.",
+    },
+    progress: 10,
+    status: "later",
   },
 ];

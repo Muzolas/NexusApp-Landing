@@ -53,13 +53,13 @@ export function FaqSection() {
   return (
     <section id="faq" className="py-24 sm:py-32 border-t border-surgical relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <Badge variant="outline" className="mb-4">
+        <Badge variant="accent" className="mb-4">
           {t("badge")}
         </Badge>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-mono font-bold tracking-tight text-primary">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-semibold tracking-tight text-primary">
           {t("title")}
         </h2>
-        <p className="mt-4 text-sm sm:text-base text-muted font-sans max-w-xl mx-auto">
+        <p className="mt-4 text-sm sm:text-base text-secondary font-sans max-w-xl mx-auto">
           {t("subtitle")}
         </p>
       </div>

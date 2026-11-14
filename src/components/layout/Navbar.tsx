@@ -44,7 +44,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <a
             href="#"
-            className="flex items-center gap-2 text-primary font-mono font-bold tracking-tight text-base hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 text-primary font-sans font-semibold tracking-tight text-base hover:opacity-85 transition-opacity"
           >
             <div className="w-7 h-7 rounded-lg bg-accent text-on-accent flex items-center justify-center shadow-sm">
               <Terminal className="w-4 h-4" />
@@ -56,25 +56,19 @@ export function Navbar() {
             href={siteConfig.links.releases}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden xl:inline-flex items-center whitespace-nowrap text-[10px] font-mono px-2 py-0.5 rounded border border-surgical bg-elevated text-muted hover:text-primary hover:border-muted transition-colors tracking-wide"
+            className="hidden xl:inline-flex items-center whitespace-nowrap text-[11px] font-sans font-medium px-2.5 py-0.5 rounded-md border border-surgical bg-card text-secondary hover:text-primary hover:border-border-strong transition-colors"
           >
             {t("badge")}
           </a>
         </div>
 
         {/* Desktop Nav Items */}
-        <nav className="hidden md:flex items-center gap-4 lg:gap-5 xl:gap-6 text-xs font-mono text-muted">
+        <nav className="hidden md:flex items-center gap-4 lg:gap-5 xl:gap-6 text-xs font-sans font-medium text-secondary">
           <button
             onClick={() => scrollToSection("features")}
             className="hover:text-primary transition-colors cursor-pointer whitespace-nowrap"
           >
             {t("features")}
-          </button>
-          <button
-            onClick={() => scrollToSection("demo")}
-            className="hover:text-primary transition-colors cursor-pointer whitespace-nowrap"
-          >
-            {t("demo")}
           </button>
           <button
             onClick={() => scrollToSection("roadmap")}
@@ -129,18 +123,12 @@ export function Navbar() {
       {/* Mobile Drawer Dropdown */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-canvas/95 backdrop-blur-xl border-b border-surgical px-6 py-6 space-y-4">
-          <div className="flex flex-col gap-3 font-mono text-sm text-muted">
+          <div className="flex flex-col gap-3 font-sans text-sm font-medium text-secondary">
             <button
               onClick={() => scrollToSection("features")}
               className="text-left py-1 hover:text-primary"
             >
               {t("features")}
-            </button>
-            <button
-              onClick={() => scrollToSection("demo")}
-              className="text-left py-1 hover:text-primary"
-            >
-              {t("demo")}
             </button>
             <button
               onClick={() => scrollToSection("roadmap")}

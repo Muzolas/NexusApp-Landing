@@ -14,12 +14,12 @@ export function AccordionItem({ question, answer, isOpenDefault = false }: Accor
   const [isOpen, setIsOpen] = useState(isOpenDefault);
 
   return (
-    <div className="border border-surgical rounded-xl bg-surface/50 overflow-hidden transition-colors hover:border-muted/40">
+    <div className="border border-surgical rounded-xl bg-card shadow-e1 overflow-hidden transition-colors hover:border-border-strong">
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
-        className="flex items-center justify-between w-full px-5 py-4 text-left font-mono text-sm sm:text-base font-medium text-primary cursor-pointer"
+        className="flex items-center justify-between w-full px-5 py-4 text-left font-sans text-sm sm:text-base font-medium text-primary cursor-pointer"
       >
         <span>{question}</span>
         <ChevronDown
@@ -30,7 +30,7 @@ export function AccordionItem({ question, answer, isOpenDefault = false }: Accor
         />
       </button>
       {isOpen && (
-        <div className="px-5 pb-4 pt-1 text-sm text-muted leading-relaxed font-sans border-t border-surgical/50">
+        <div className="px-5 pb-4 pt-1 text-sm text-secondary leading-relaxed font-sans border-t border-surgical/60">
           {answer}
         </div>
       )}
