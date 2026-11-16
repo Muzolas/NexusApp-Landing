@@ -130,5 +130,186 @@
     "terms": "Kullanım Koşulları",
     "github": "GitHub",
     "twitter": "X (Twitter)"
+  },
+  "Legal": {
+    "updatedLabel": "Son güncelleme",
+    "updated": "16 Kasım 2026",
+    "contactLabel": "Sorular",
+    "backHome": "Ana sayfaya dön",
+    "privacy": {
+      "title": "Gizlilik Politikası",
+      "description": "Orkhon hangi verileri, neden topluyor; kim işliyor ve nasıl silinir.",
+      "intro": "Bu politika, Orkhon'un hangi kişisel verileri topladığını, bunları neden topladığını ve senin hangi haklara sahip olduğunu açıklar. orkhon.beishang.dev web sitesini ve app.orkhon.beishang.dev uygulamasını kapsar.",
+      "sections": [
+        {
+          "title": "Biz kimiz",
+          "paragraphs": [
+            "Orkhon, Türkiye'de yaşayan bağımsız bir geliştirici olan beishang.dev tarafından geliştirilir ve işletilir. Burada anlatılan veriler için veri sorumlusu biziz. Bize contact@beishang.dev adresinden ulaşabilirsin."
+          ]
+        },
+        {
+          "title": "Hangi verileri topluyoruz",
+          "items": [
+            "Hesap bilgileri: e-posta adresin, adın ve dil tercihin. Şifren yalnızca Argon2id ile hash'lenmiş olarak saklanır, hiçbir zaman düz metin olarak tutulmaz.",
+            "Google veya GitHub ile giriş: bu yolu seçersen o servisten adını, e-posta adresini, profil fotoğrafını ve hesap kimliğini alırız. Google veya GitHub şifreni almayız.",
+            "Oturumlar: giriş yapılan her cihaz için IP adresini, tarayıcı bilgisini (user agent) ve cihaz adını tutarız. Böylece hesabını korur ve nerelerde oturum açık olduğunu sana gösteririz.",
+            "Bağlanan servisler: eklediğin erişim token'ları ve API anahtarları (örneğin Vercel, Coolify, GitHub, Stripe, Supabase veya bir veritabanı). Bunlar AES-256-GCM ile şifrelenir, sana bir daha düz metin olarak gösterilmez ve loglara yazılmaz.",
+            "Çalışma alanı verileri: Orkhon'un senin adına bu servislerden okuduğu veriler (deploy'lar, CI çalışmaları, gelir rakamları, loglar, veritabanı bilgileri) ve senin girdiğin bilgiler (giderler, notlar, ayarlar).",
+            "Web sitesi formları: iletişim veya erken erişim formuyla gönderdiğin e-posta adresi ve mesaj. Bunlar bize e-posta olarak ulaşır.",
+            "Ödeme: ücretli bir plan alırsan ödemeyi Stripe işler. Biz planını, ödeme durumunu ve sınırlı fatura bilgilerini görürüz; kart numaranın tamamını hiçbir zaman almayız."
+          ]
+        },
+        {
+          "title": "Verileri ne için kullanıyoruz",
+          "items": [
+            "Orkhon'u çalıştırmak ve izlemesini istediğin verileri sana göstermek için.",
+            "Hesapları güvende tutmak için; örneğin olağandışı girişleri fark etmek ve art arda yapılan giriş denemelerini sınırlamak.",
+            "Hizmet e-postaları göndermek için: e-posta doğrulama, şifre sıfırlama, davetler ve ödeme bildirimleri.",
+            "Mesajlarına ve destek isteklerine cevap vermek için."
+          ],
+          "paragraphs": [
+            "Verilerini satmayız, reklam göstermeyiz ve üçüncü taraf reklam takipçileri kullanmayız."
+          ]
+        },
+        {
+          "title": "Yapay zekâ özellikleri",
+          "paragraphs": [
+            "AI asistanını kullandığında sorun ve gereken çalışma alanı bağlamı bir yapay zekâ sağlayıcısına gönderilir: varsayılan olarak Google Gemini'ye ya da anahtarını eklediğin sağlayıcıya (OpenAI, Anthropic veya DeepSeek). Bu yalnızca asistanı kullandığında olur. Bu sağlayıcılar veriyi kendi koşullarına göre işler."
+          ]
+        },
+        {
+          "title": "Verileri bizim için kimler işliyor",
+          "items": [
+            "Hostinger: Orkhon uygulamasını, API'yi ve veritabanını çalıştıran sunucu.",
+            "Vercel: bu web sitesinin barındırılması.",
+            "Resend: hizmet e-postalarının ve web sitesi form mesajlarının iletilmesi.",
+            "Stripe: ücretli planların ödemeleri.",
+            "Google ve GitHub: giriş, yalnızca bu yolu seçersen.",
+            "Yukarıda sayılan yapay zekâ sağlayıcıları, yalnızca asistanı kullandığında."
+          ],
+          "paragraphs": [
+            "Bu sağlayıcıların bir kısmı verileri Türkiye dışında işler. Onları yalnızca hizmeti çalıştırmak için kullanırız; verilerini kendi amaçları için kullanamazlar."
+          ]
+        },
+        {
+          "title": "Çerezler ve tarayıcı depolaması",
+          "paragraphs": [
+            "Bu web sitesi tema ve dil seçimini hatırlar. Uygulama, oturumun açık kalsın diye giriş token'larını tarayıcında saklar. Analiz veya reklam çerezi kullanmayız."
+          ]
+        },
+        {
+          "title": "Verileri ne kadar saklıyoruz",
+          "paragraphs": [
+            "Hesap ve çalışma alanı verilerini hesabın açık olduğu sürece saklarız. Hesabının silinmesini istediğinde hesabını ve çalışma alanı verilerini 30 gün içinde sileriz; faturalar gibi yasal olarak saklamamız gereken kayıtlar hariç. Web sitesi form mesajlarını yalnızca cevap vermek için gerektiği kadar tutarız."
+          ]
+        },
+        {
+          "title": "Hakların",
+          "paragraphs": [
+            "6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve geçerli olduğu durumlarda GDPR kapsamında verilerini görmeyi, düzeltilmesini, dışa aktarılmasını veya silinmesini isteyebilir; işlenmesine itiraz edebilirsin. contact@beishang.dev adresine yaz, 30 gün içinde cevap veririz. Ayrıca Kişisel Verileri Koruma Kurumu'na şikâyette bulunabilirsin."
+          ]
+        },
+        {
+          "title": "Güvenlik",
+          "paragraphs": [
+            "Tüm trafik TLS ile şifrelenir. Gizli anahtarlar şifreli, şifreler hash'lenmiş olarak tutulur ve her çalışma alanının verisi diğerlerinden ayrıdır. Hiçbir sistem kusursuz değildir; verilerini etkileyen bir ihlal olursa yasanın gerektirdiği şekilde sana haber veririz."
+          ]
+        },
+        {
+          "title": "Çocuklar",
+          "paragraphs": [
+            "Orkhon 16 yaşından küçükler için değildir ve bilerek onların verisini toplamayız."
+          ]
+        },
+        {
+          "title": "Değişiklikler",
+          "paragraphs": [
+            "Bu politika değiştiğinde en üstteki tarihi güncelleriz. Önemli değişikliklerde, yürürlüğe girmeden önce hesap sahiplerine e-posta da göndeririz."
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Kullanım Koşulları",
+      "description": "Orkhon'u kullanma kuralları.",
+      "intro": "Bu koşullar, beishang.dev tarafından işletilen Orkhon'u, yani orkhon.beishang.dev web sitesini ve app.orkhon.beishang.dev uygulamasını kullandığında geçerlidir. Hesap oluşturarak veya Orkhon'u kullanarak bu koşulları kabul etmiş olursun.",
+      "sections": [
+        {
+          "title": "Erken erişim",
+          "paragraphs": [
+            "Orkhon erken erişim aşamasındadır. Özellikler değişebilir, sınırlı olabilir veya zaman zaman kullanılamayabilir; şimdilik belirli bir çalışma süresi garantisi vermiyoruz."
+          ]
+        },
+        {
+          "title": "Hesabın",
+          "items": [
+            "En az 16 yaşında olmalısın.",
+            "Doğru bilgi vermeli ve giriş bilgilerini güvende tutmalısın.",
+            "Hesabında olan her şeyden sen sorumlusun. Başka birinin hesabına eriştiğini düşünürsen bize hemen haber ver."
+          ]
+        },
+        {
+          "title": "Verilerin ve bağlanan servisler",
+          "paragraphs": [
+            "Verilerin sana aittir. Bir servisi bağladığında Orkhon'un ona yalnızca kullandığın özellikleri sağlamak için erişmesine izin vermiş olursun. Yalnızca kullanma hakkın olan servisleri ve hesapları bağla. Bir servisin bağlantısını istediğin zaman kesebilirsin."
+          ]
+        },
+        {
+          "title": "Kabul edilebilir kullanım",
+          "paragraphs": [
+            "Orkhon'u şunlar için kullanma:"
+          ],
+          "items": [
+            "yasaları veya bağladığın bir servisin koşullarını çiğnemek;",
+            "sahibi olmadığın ya da test etme izni almadığın sistemleri taramak, yoklamak veya onlara saldırmak;",
+            "plan sınırlarını, güvenlik kontrollerini veya erişim kısıtlarını aşmaya çalışmak;",
+            "hizmete makul olmayan yük bindirmek veya diğer kullanıcıları engellemek;",
+            "yazılı iznimiz olmadan hizmeti yeniden satmak veya dağıtmak."
+          ]
+        },
+        {
+          "title": "Planlar ve ödeme",
+          "paragraphs": [
+            "Ücretli planlar her dönem için peşin olarak Stripe üzerinden faturalanır. İstediğin zaman iptal edebilirsin; plan, ödenen dönemin sonuna kadar açık kalır. Bir fiyat değişikliğini yürürlüğe girmeden önce sana bildiririz. İadeler, sana uygulanan yasalara göre yapılır."
+          ]
+        },
+        {
+          "title": "AI asistanı",
+          "paragraphs": [
+            "AI cevapları yanlış veya eksik olabilir. Özellikle deploy, veritabanı değişikliği ya da geri alınamayacak bir işlem yapmadan önce cevabı kontrol et. Yaptığın işlemlerden sen sorumlusun."
+          ]
+        },
+        {
+          "title": "Garanti verilmemesi",
+          "paragraphs": [
+            "Orkhon olduğu gibi sunulur. Yasaların izin verdiği ölçüde, kesintisiz, hatasız veya belirli bir amaca uygun olacağına dair söz vermiyoruz."
+          ]
+        },
+        {
+          "title": "Sorumluluğun sınırı",
+          "paragraphs": [
+            "Yasaların izin verdiği ölçüde kâr kaybı veya veri kaybı gibi dolaylı zararlardan sorumlu değiliz. Toplam sorumluluğumuz, talepten önceki 12 ayda bize ödediğin tutarla sınırlıdır. Bu koşullardaki hiçbir şey, sözleşmeyle sınırlandırılamayan tüketici haklarını kısıtlamaz."
+          ]
+        },
+        {
+          "title": "Kullanımın sona ermesi",
+          "paragraphs": [
+            "Orkhon'u kullanmayı istediğin zaman bırakabilir ve hesabının silinmesini isteyebilirsin. Bu koşulları çiğneyen bir hesabı askıya alabilir veya kapatabiliriz; mümkünse önce sana haber verir ve nedenini açıklarız."
+          ]
+        },
+        {
+          "title": "Koşullardaki değişiklikler",
+          "paragraphs": [
+            "Bu koşulları güncelleyebiliriz. Önemli değişikliklerde, yürürlüğe girmeden önce hesap sahiplerine e-posta göndeririz. Bundan sonra Orkhon'u kullanmaya devam edersen yeni koşullar geçerli olur."
+          ]
+        },
+        {
+          "title": "Uygulanacak hukuk",
+          "paragraphs": [
+            "Bu koşullar Türkiye Cumhuriyeti hukukuna tabidir ve Türkiye mahkemeleri yetkilidir. Bu, ülkendeki zorunlu tüketici koruma kurallarını etkilemez."
+          ]
+        }
+      ]
+    }
   }
 }

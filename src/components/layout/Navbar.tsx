@@ -9,9 +9,11 @@ import { LangSwitch } from "@/components/ui/LangSwitch";
 import { Menu, X } from "lucide-react";
 import { OrkhonMark } from "@/components/ui/OrkhonMark";
 import { cn } from "@/lib/utils";
+import { useRouter } from "@/i18n/routing";
 
 export function Navbar() {
   const t = useTranslations("Navbar");
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -28,6 +30,9 @@ export function Navbar() {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // On other pages (privacy, terms) the section lives on the home page.
+      router.push(`/#${id}`);
     }
   };
 

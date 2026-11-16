@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import { siteConfig } from "@/config/site";
 import { StatusLed } from "@/components/ui/StatusLed";
 import { OrkhonMark } from "@/components/ui/OrkhonMark";
+import { Link } from "@/i18n/routing";
 
 export function Footer() {
   const t = useTranslations("Footer");
@@ -46,12 +47,12 @@ export function Footer() {
             >
               {t("twitter")}
             </a>
-            <a href="#privacy" className="hover:text-primary transition-colors">
+            <Link href="/privacy" className="hover:text-primary transition-colors">
               {t("privacy")}
-            </a>
-            <a href="#terms" className="hover:text-primary transition-colors">
+            </Link>
+            <Link href="/terms" className="hover:text-primary transition-colors">
               {t("terms")}
-            </a>
+            </Link>
           </div>
 
           {/* Copyright */}
