@@ -10,9 +10,9 @@ export const siteConfig = {
   released: false, // Pre-launch flag
   earlyAccessLabel: "Early access · Invite-only preview",
   links: {
-    github: process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/Muzolas/NexusApp",
+    github: process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/Muzolas/Orkhon",
     twitter: "https://x.com/beishangdev",
-    releases: `${process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/Muzolas/NexusApp"}/releases`,
+    releases: `${process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/Muzolas/Orkhon"}/releases`,
     contactEmail: "contact@beishang.dev",
   },
   telemetryItems: [
