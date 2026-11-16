@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import { siteConfig } from "@/config/site";
 import { StatusLed } from "@/components/ui/StatusLed";
-import { Terminal } from "lucide-react";
+import { OrkhonMark } from "@/components/ui/OrkhonMark";
 
 export function Footer() {
   const t = useTranslations("Footer");
@@ -14,10 +14,8 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand & Status Indicator */}
           <div className="flex items-center gap-3">
-            <div className="w-6 h-6 rounded bg-accent text-on-accent flex items-center justify-center">
-              <Terminal className="w-3.5 h-3.5" />
-            </div>
-            <span className="font-bold text-primary">{siteConfig.name}</span>
+            <OrkhonMark className="w-6 h-6" />
+            <span className="font-medium lowercase text-primary">{siteConfig.name}</span>
             <span className="text-surgical">|</span>
             <div className="inline-flex items-center gap-2 px-2 py-0.5 rounded border border-surgical bg-surface">
               <StatusLed status="live" />

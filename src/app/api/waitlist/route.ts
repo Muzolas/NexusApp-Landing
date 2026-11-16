@@ -12,7 +12,7 @@ export async function POST(req: Request) {
 
     const clean = email.trim().toLowerCase();
     const result = await sendOwnerMail({
-      subject: `[NexusApp] Early access / demo request: ${clean}`,
+      subject: `[Orkhon] Early access / demo request: ${clean}`,
       text: `New early access and demo request.\n\nEmail: ${clean}\nLanguage: ${locale ?? "-"}\nTime: ${new Date().toISOString()}`,
       replyTo: clean,
     });

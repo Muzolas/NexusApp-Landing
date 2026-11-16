@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { siteConfig } from "@/config/site";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -22,13 +23,13 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NexusApp — Control Console for Indie Developers",
+  title: `${siteConfig.name} — Indie Control Center`,
   description:
-    "Web control console for indie developers. Monitor Vercel and Coolify deployments, GitHub Actions CI, Stripe revenue, expenses, logs, PostgreSQL/Supabase and Autopilot rules in one quiet workspace.",
-  metadataBase: new URL("https://nexus.beishang.dev"),
+    "Orchestrate your indie stack. Monitor Vercel and Coolify deployments, GitHub Actions CI, Stripe revenue, expenses, logs, PostgreSQL/Supabase and Autopilot rules in one quiet workspace.",
+  metadataBase: new URL(siteConfig.url),
   keywords: [
-    "NexusApp",
-    "Indie Control Console",
+    siteConfig.name,
+    "Indie Control Center",
     "Web Control Center",
     "Go Fiber BFF",
     "Developer Console",
@@ -40,17 +41,17 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "beishang.dev" }],
   openGraph: {
-    title: "NexusApp — Control Console for Indie Developers",
+    title: `${siteConfig.name} — Indie Control Center`,
     description:
-      "Web control console for indie developers. Monitor Vercel and Coolify deployments, GitHub Actions CI, Stripe revenue, expenses, logs, PostgreSQL/Supabase and Autopilot rules in one quiet workspace.",
-    url: "https://nexus.beishang.dev",
-    siteName: "NexusApp",
+      "Orchestrate your indie stack. Monitor Vercel and Coolify deployments, GitHub Actions CI, Stripe revenue, expenses, logs, PostgreSQL/Supabase and Autopilot rules in one quiet workspace.",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "NexusApp Preview",
+        alt: `${siteConfig.name} preview`,
       },
     ],
     locale: "tr_TR",
@@ -58,9 +59,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "NexusApp — Control Console for Indie Developers",
+    title: `${siteConfig.name} — Indie Control Center`,
     description:
-      "Web control console for indie developers. Monitor deploys, CI, Stripe revenue, expenses, logs, PostgreSQL/Supabase and Autopilot in one place.",
+      "Orchestrate your indie stack. Monitor deploys, CI, Stripe revenue, expenses, logs, PostgreSQL/Supabase and Autopilot in one place.",
     images: ["/og-image.png"],
   },
 };

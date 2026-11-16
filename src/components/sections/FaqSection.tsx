@@ -10,12 +10,12 @@ export function FaqSection() {
   const faqs = [
     {
       question: {
-        tr: "NexusApp ne zaman genel erişime açılacak?",
-        en: "When will NexusApp become publicly available?",
+        tr: "Orkhon ne zaman genel erişime açılacak?",
+        en: "When will Orkhon become publicly available?",
       },
       answer: {
-        tr: "NexusApp şu anda kapalı alfa geliştirme aşamasındadır. Erken erişim bekleme listesine kaydolan geliştiriciler, ilk dalga beta testine kademeli olarak davet edilecektir.",
-        en: "NexusApp is currently in closed alpha development. Builders registered on the early access waitlist will be invited in rolling batches during the beta wave.",
+        tr: "Orkhon şu anda kapalı alfa geliştirme aşamasındadır. Erken erişim bekleme listesine kaydolan geliştiriciler, ilk dalga beta testine kademeli olarak davet edilecektir.",
+        en: "Orkhon is currently in closed alpha development. Builders registered on the early access waitlist will be invited in rolling batches during the beta wave.",
       },
     },
     {
@@ -24,8 +24,8 @@ export function FaqSection() {
         en: "Do I need to install anything? How do I get a demo?",
       },
       answer: {
-        tr: "Hayır. NexusApp bir web uygulamasıdır; güncel bir tarayıcıda (Chrome, Edge, Firefox, Safari) çalışır. Demo için sayfanın altındaki forma e-postanızı bırakın ya da contact@beishang.dev adresine yazın; size özel bir demo için e-postayla dönüş yapıyoruz.",
-        en: "No. NexusApp is a web app that runs in any modern browser (Chrome, Edge, Firefox, Safari). For a demo, leave your email in the form below or write to contact@beishang.dev — we reply by email to set up a personal walkthrough.",
+        tr: "Hayır. Orkhon bir web uygulamasıdır; güncel bir tarayıcıda (Chrome, Edge, Firefox, Safari) çalışır. Demo için sayfanın altındaki forma e-postanızı bırakın ya da contact@beishang.dev adresine yazın; size özel bir demo için e-postayla dönüş yapıyoruz.",
+        en: "No. Orkhon is a web app that runs in any modern browser (Chrome, Edge, Firefox, Safari). For a demo, leave your email in the form below or write to contact@beishang.dev — we reply by email to set up a personal walkthrough.",
       },
     },
     {
@@ -40,8 +40,8 @@ export function FaqSection() {
     },
     {
       question: {
-        tr: "NexusApp açık kaynak kodlu mu?",
-        en: "Is NexusApp open source?",
+        tr: "Orkhon açık kaynak kodlu mu?",
+        en: "Is Orkhon open source?",
       },
       answer: {
         tr: "Web istemcimiz ve Go BFF çekirdeğimiz GitHub üzerinde şeffaf bir şekilde geliştirilmektedir. Kurumsal entegrasyonlar ve gelişmiş yapay zeka SRE modülleri ticari lisans kapsamında sunulacaktır.",

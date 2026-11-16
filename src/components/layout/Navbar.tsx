@@ -6,7 +6,8 @@ import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/Button";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { LangSwitch } from "@/components/ui/LangSwitch";
-import { Terminal, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { OrkhonMark } from "@/components/ui/OrkhonMark";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
@@ -46,10 +47,8 @@ export function Navbar() {
             href="#"
             className="flex items-center gap-2 text-primary font-sans font-semibold tracking-tight text-base hover:opacity-85 transition-opacity"
           >
-            <div className="w-7 h-7 rounded-lg bg-accent text-on-accent flex items-center justify-center shadow-sm">
-              <Terminal className="w-4 h-4" />
-            </div>
-            <span>{siteConfig.name}</span>
+            <OrkhonMark className="w-7 h-7" />
+            <span className="lowercase font-medium tracking-tight">{siteConfig.name}</span>
           </a>
 
           <a

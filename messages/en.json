@@ -1,6 +1,6 @@
 {
   "Navbar": {
-    "brand": "NexusApp",
+    "brand": "Orkhon",
     "badge": "Early access · Invite preview",
     "features": "Features",
     "roadmap": "Roadmap",
@@ -13,7 +13,7 @@
     "liveStatus": "8 core modules · Mulberry UI",
     "liveStatusAria": "System WebSocket connection active",
     "titlePrefix": "For Indie Hackers & Builders",
-    "titleHighlight": "Control Console",
+    "titleHighlight": "Control Center",
     "subtitle": "Unify GitHub Actions CI, Vercel and Coolify deployments, Stripe revenue, expenses, logs, PostgreSQL/Supabase and Autopilot rules in one quiet web console — with AI root-cause diagnostics.",
     "primaryCta": "Request Early Access",
     "secondaryCta": "Explore Features",
@@ -100,7 +100,7 @@
   "Faq": {
     "badge": "Frequently Asked",
     "title": "Common Questions",
-    "subtitle": "Everything you need to know about NexusApp and the early access preview."
+    "subtitle": "Everything you need to know about Orkhon and the early access preview."
   },
   "Waitlist": {
     "badge": "Early Access List",

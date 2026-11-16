@@ -1,3 +1,5 @@
+import { siteConfig } from "@/config/site";
+
 export interface CodeSnippet {
   id: "ts" | "curl" | "go";
   language: string;
@@ -10,8 +12,8 @@ export const terminalSnippets: CodeSnippet[] = [
     id: "ts",
     language: "typescript",
     filename: "ingest-log.ts",
-    code: `// Ingest an application log into NexusApp via Gateway API (/v1/logs)
-await fetch("https://api.nexus.beishang.dev/v1/logs", {
+    code: `// Ingest an application log into Orkhon via Gateway API (/v1/logs)
+await fetch("${siteConfig.apiBaseUrl}/v1/logs", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
@@ -30,11 +32,11 @@ await fetch("https://api.nexus.beishang.dev/v1/logs", {
     language: "bash",
     filename: "ingest.sh",
     code: `# Check Gateway health with your nx_live_ API key
-curl -s "https://api.nexus.beishang.dev/v1/health" \\
+curl -s "${siteConfig.apiBaseUrl}/v1/health" \\
   -H "Authorization: Bearer $NEXUS_API_KEY"
 
 # Send a structured error log to Logs & Errors
-curl -s -X POST "https://api.nexus.beishang.dev/v1/logs" \\
+curl -s -X POST "${siteConfig.apiBaseUrl}/v1/logs" \\
   -H "Authorization: Bearer $NEXUS_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -56,9 +58,9 @@ import (
 	"os"
 )
 
-func sendNexusLog() error {
+func sendOrkhonLog() error {
 	payload := []byte(\`{"level":"ERROR","service":"worker","message":"pgxpool acquire timeout"}\`)
-	req, err := http.NewRequest(http.MethodPost, "https://api.nexus.beishang.dev/v1/logs", bytes.NewReader(payload))
+	req, err := http.NewRequest(http.MethodPost, "${siteConfig.apiBaseUrl}/v1/logs", bytes.NewReader(payload))
 	if err != nil {
 		return err
 	}

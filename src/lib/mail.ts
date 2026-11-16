@@ -4,7 +4,7 @@
 //   RESEND_API_KEY    required to send; without it every send returns "not_configured"
 //   CONTACT_TO_EMAIL  where messages go (default: contact@beishang.dev)
 //   MAIL_FROM         sender, must be on a domain verified in Resend
-//                     (default: "NexusApp <onboarding@resend.dev>", Resend's test sender)
+//                     (default: "Orkhon <onboarding@resend.dev>", Resend's test sender)
 
 export type MailResult = "sent" | "not_configured" | "failed";
 
@@ -21,7 +21,7 @@ export async function sendOwnerMail(opts: {
       method: "POST",
       headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
       body: JSON.stringify({
-        from: process.env.MAIL_FROM || "NexusApp <onboarding@resend.dev>",
+        from: process.env.MAIL_FROM || "Orkhon <onboarding@resend.dev>",
         to: [process.env.CONTACT_TO_EMAIL || "contact@beishang.dev"],
         subject: opts.subject,
         text: opts.text,

@@ -15,7 +15,7 @@ export async function GET() {
 
   try {
     const res = await fetch(
-      "https://api.github.com/repos/Muzolas/NexusApp/releases/latest",
+      `https://api.github.com/repos/${process.env.GITHUB_REPO || "Muzolas/NexusApp"}/releases/latest`,
       {
         headers: {
           Accept: "application/vnd.github.v3+json",

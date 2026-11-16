@@ -112,7 +112,7 @@ export const pricingTiers: PricingTier[] = [
       tr: [
         { text: "15 çalışma alanına kadar" },
         { text: "Kendi Gemini anahtarınız (BYOK — kredi harcamaz)" },
-        { text: "Nexus Gateway API anahtarları (/v1/logs)" },
+        { text: "Orkhon Gateway API anahtarları (/v1/logs)" },
         { text: "Supabase Storage kova tarayıcısı" },
         { text: "Giden webhook teslimatı", soon: true },
         { text: "Creator'daki her şey" },
@@ -120,7 +120,7 @@ export const pricingTiers: PricingTier[] = [
       en: [
         { text: "Up to 15 workspaces" },
         { text: "Your own Gemini key (BYOK — uses no credits)" },
-        { text: "API keys for the Nexus gateway (/v1/logs)" },
+        { text: "API keys for the Orkhon gateway (/v1/logs)" },
         { text: "Supabase Storage bucket browser" },
         { text: "Outbound webhook delivery", soon: true },
         { text: "Everything in Creator" },

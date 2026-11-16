@@ -1,6 +1,6 @@
 {
   "Navbar": {
-    "brand": "NexusApp",
+    "brand": "Orkhon",
     "badge": "Erken erişim · Davetli önizleme",
     "features": "Özellikler",
     "roadmap": "Yol Haritası",
@@ -13,7 +13,7 @@
     "liveStatus": "8 çekirdek modül · Mulberry UI",
     "liveStatusAria": "Sistem WebSocket bağlantısı aktif",
     "titlePrefix": "Bağımsız Geliştiriciler İçin",
-    "titleHighlight": "Kontrol Konsolu",
+    "titleHighlight": "Kontrol Merkezi",
     "subtitle": "GitHub Actions CI, Vercel ve Coolify dağıtımları, Stripe geliri, giderler, loglar, PostgreSQL/Supabase ve Otopilot kurallarını tek bir sakin web konsolunda birleştirin — AI kök neden teşhisi ile.",
     "primaryCta": "Erken Erişim İste",
     "secondaryCta": "Özellikleri İncele",
@@ -100,7 +100,7 @@
   "Faq": {
     "badge": "Merak Edilenler",
     "title": "Sıkça Sorulan Sorular",
-    "subtitle": "NexusApp ve erken erişim önizleme süreci hakkında bilmeniz gereken her şey."
+    "subtitle": "Orkhon ve erken erişim önizleme süreci hakkında bilmeniz gereken her şey."
   },
   "Waitlist": {
     "badge": "Erken Erişim Listesi",

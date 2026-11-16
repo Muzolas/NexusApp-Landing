@@ -11,5 +11,5 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 ## Design
 
 - For any page or section work, load the `design-taste-frontend` skill (`.claude/skills/design-taste-frontend`).
-- Keep the Nexus Mulberry identity (warm plum-tinted neutrals, single brand accent family, Inter + JetBrains Mono, sentence-case headings); see `../NexusApp/DESIGN.md`.
+- Keep the Orkhon Mulberry identity (name: Orkhon, descriptor: Indie Control Center) (warm plum-tinted neutrals, single brand accent family, Inter + JetBrains Mono, sentence-case headings); see `../NexusApp/DESIGN.md`.
 - No invented customers, numbers, testimonials or press. The product has no public customer data yet.

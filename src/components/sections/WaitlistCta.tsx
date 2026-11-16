@@ -40,8 +40,8 @@ export function WaitlistCta() {
       setSubmitted(true);
     } catch {
       // Email is not set up or failed: send the request from the visitor's mail app.
-      const subject = encodeURIComponent("NexusApp early access / demo request");
-      const body = encodeURIComponent(`Hi, I would like early access and a demo of NexusApp.\n\nEmail: ${email}`);
+      const subject = encodeURIComponent("Orkhon early access / demo request");
+      const body = encodeURIComponent(`Hi, I would like early access and a demo of Orkhon.\n\nEmail: ${email}`);
       window.location.href = `mailto:${siteConfig.links.contactEmail}?subject=${subject}&body=${body}`;
       setSubmitted(true);
     } finally {

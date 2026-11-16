@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @layer base {
-  /* Palette source: ../NexusApp/design/brand-palette.json (Nexus Mulberry) */
+  /* Palette source: ../NexusApp/design/brand-palette.json (Mulberry) */
   :root {
     --canvas: #f0eee9;
     --sidebar: #e7e3dd;

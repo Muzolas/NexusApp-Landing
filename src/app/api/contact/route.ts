@@ -13,7 +13,7 @@ export async function POST(req: Request) {
 
     const who = typeof name === "string" && name.trim() ? `${name.trim().slice(0, 100)} <${email.trim()}>` : email.trim();
     const result = await sendOwnerMail({
-      subject: `[NexusApp] Message from ${who}`,
+      subject: `[Orkhon] Message from ${who}`,
       text: `${message.trim()}\n\n— ${who}${locale ? ` (${locale})` : ""}`,
       replyTo: email.trim(),
     });

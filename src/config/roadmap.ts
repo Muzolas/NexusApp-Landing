@@ -26,8 +26,8 @@ export const roadmapItems: RoadmapItem[] = [
       en: "CORE CONSOLE · 8 MODULES",
     },
     title: {
-      tr: "8 Çekirdek Modül & Nexus Mulberry Arayüzü",
-      en: "8 Core Modules & Nexus Mulberry UI",
+      tr: "8 Çekirdek Modül & Mulberry Arayüzü",
+      en: "8 Core Modules & Mulberry UI",
     },
     description: {
       tr: "Pilot brifingi, Vercel ve Coolify Deployments, GitHub Actions Workflows, Stripe Revenue, Expenses, Logs & Errors, Postgres/Supabase Database & Storage ve Autopilot.",

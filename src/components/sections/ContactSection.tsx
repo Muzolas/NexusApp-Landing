@@ -40,7 +40,7 @@ export function ContactSection() {
       setSubmitted(true);
     } catch {
       // Email is not set up or failed: hand the message to the visitor's mail app.
-      const subject = encodeURIComponent(`NexusApp — ${formData.name || formData.email}`);
+      const subject = encodeURIComponent(`Orkhon — ${formData.name || formData.email}`);
       const body = encodeURIComponent(`${formData.message}\n\n— ${formData.email}`);
       window.location.href = `mailto:${siteConfig.links.contactEmail}?subject=${subject}&body=${body}`;
       setSubmitted(true);
