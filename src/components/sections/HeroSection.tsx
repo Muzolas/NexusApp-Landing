@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { StatusLed } from "@/components/ui/StatusLed";
+import { OrkhonMark } from "@/components/ui/OrkhonMark";
 import { useOS } from "@/lib/use-os";
 import { ArrowRight, Layers, Cpu } from "lucide-react";
 
@@ -111,9 +112,7 @@ export function HeroSection() {
               {/* Product Topbar */}
               <div className="h-11 border-b border-surgical bg-sidebar px-4 flex items-center justify-between gap-3">
                 <div className="flex items-center gap-2.5 min-w-0">
-                  <span className="w-5 h-5 rounded-md bg-accent text-on-accent font-mono text-[11px] font-bold flex items-center justify-center shrink-0">
-                    N
-                  </span>
+                  <OrkhonMark className="w-5 h-5 shrink-0" />
                   <span className="font-sans text-xs font-medium text-secondary truncate">
                     beishang-dev <span className="text-muted">/</span>{" "}
                     <span className="text-primary font-semibold">Pilot</span>
